@@ -1,0 +1,52 @@
+@theme {
+  /* colors */
+  /* --Primary-- */
+  --color-primary-50: #f3f2ff;
+  --color-primary-100: #dad9ff;
+  --color-primary-200: #c1c1fe;
+  --color-primary-300: #a7aaf9;
+  --color-primary-400: #8c93ee;
+  --color-primary-500: #737ede;
+  --color-primary-600: #5b6ac9;
+  --color-primary-700: #4657af;
+  --color-primary-800: #364590;
+  --color-primary-900: #29346e;
+
+  /* --Danger-- */
+  --color-danger-50: #ffede8;
+  --color-danger-100: #ffc9bb;
+  --color-danger-200: #ffa592;
+  --color-danger-300: #ff816e;
+  --color-danger-400: #ff5d4f;
+  --color-danger-500: #fc3835;
+  --color-danger-600: #e30c21;
+  --color-danger-700: #c50013;
+  --color-danger-800: #a2000b;
+  --color-danger-900: #7d0005;
+
+  /* Spacing */
+  --spacing-0: 0rem; /* 0px */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+  --spacing-20: 5rem; /* 80px */
+  --spacing-24: 6rem; /* 96px */
+  --spacing-32: 8rem; /* 128px */
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-xs: 0.125rem; /* 2px */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-full: 9999px;
+}
