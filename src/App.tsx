@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Loader from './components/Loader';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
 
@@ -11,6 +11,7 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route element={<AdminLayout />}>
+            <Route index element={<Navigate to="job-management" replace />} />
             <Route path="job-management" element={<JobManagement />} />
           </Route>
         </Routes>
