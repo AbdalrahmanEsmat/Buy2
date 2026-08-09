@@ -1,3 +1,13 @@
+import SearchBar from '../components/SearchBar';
+import JobManagementActions from '../features/jobManagement/JobManagementActions';
+
 export default function JobManagement() {
-  return <h1>This is the job management page</h1>;
+  return (
+    <div className="bg-white rounded-2xl">
+      <div className="flex gap-8 h-24">
+        <SearchBar />
+        <JobManagementActions />
+      </div>
+    </div>
+  );
 }
