@@ -87,6 +87,9 @@
   --color-danger-800: #a2000b;
   --color-danger-900: #7d0005;
 
+  /* Surface */
+  --color-background: #fafafb;
+
   /* Font */
   --font-sans: 'Poppins', sans-serif;
 
@@ -113,6 +116,7 @@
   --radius-md: 0.5rem; /* 8px */
   --radius-lg: 0.75rem; /* 12px */
   --radius-xl: 1rem; /* 16px */
-  --radius-2xl: 1.5rem; /* 24px */
+  --radius-2xl: 1.25rem; /* 20px */
+  --radius-3xl: 1.5rem; /* 24px */
   --radius-full: 9999px;
 }
