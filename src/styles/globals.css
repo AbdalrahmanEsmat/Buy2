@@ -11,3 +11,17 @@
     background-color: var(--color-background);
   }
 }
+
+@layer components {
+  .sidebar-item {
+    @apply px-16 py-5 h-28 border-r-4 border-transparent;
+  }
+
+  .sidebar-item-active {
+    @apply bg-primary-50 border-primary-900;
+  }
+
+  .Link {
+    @apply flex items-center gap-6 h-full;
+  }
+}
