@@ -5,7 +5,7 @@ export default function AdminLayout() {
   return (
     <div className="flex gap-12 h-screen p-8">
       <AdminSideBar />
-      <main className="flex-1">
+      <main className="flex-1 bg-white rounded-2xl p-8 h-full">
         <Outlet />
       </main>
     </div>
