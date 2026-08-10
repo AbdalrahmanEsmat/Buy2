@@ -3,7 +3,7 @@ import {
   AdjustmentsHorizontalIcon,
 } from '@heroicons/react/24/outline';
 
-export default function JobManagementActions() {
+export default function JobActions() {
   return (
     <div className="flex h-full items-center gap-8">
       {/* Sort */}

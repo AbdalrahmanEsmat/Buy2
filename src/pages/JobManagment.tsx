@@ -1,12 +1,12 @@
 import SearchBar from '../components/SearchBar';
-import JobManagementActions from '../features/jobManagement/JobManagementActions';
+import JobActions from '../features/jobManagement/JobActions';
 
 export default function JobManagement() {
   return (
     <div className="bg-white rounded-2xl">
       <div className="flex gap-8 h-24">
         <SearchBar />
-        <JobManagementActions />
+        <JobActions />
       </div>
     </div>
   );
