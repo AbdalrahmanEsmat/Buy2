@@ -1,76 +1,10 @@
-//------------ Types ------------
-
-// employee
-export type Employee = {
-  employeeId: string;
-  name: string;
-  email: string;
-  joinDate: string;
-};
-
-// qualification
-export type Qualification = {
-  id: string;
-  name: string;
-};
-
-// seniority level
-export type SeniorityLevel = {
-  id: string;
-  name: string;
-};
-
-// department
-export type Department = {
-  id: string;
-  name: string;
-};
-
-// FixedSchedule
-export type FixedSchedule = {
-  checkInFrom: string;
-  checkInTo: string;
-  checkOutFrom: string;
-  checkOutTo: string;
-  hoursPerDay: number;
-};
-
-// performance metric
-export type PerformanceMetric = {
-  name: string;
-  description: string;
-  measure: number;
-  target: number;
-  weight: number;
-};
-
-// fixed task
-export type FixedTask = {
-  name: string;
-  description: string;
-  steps: string[];
-  attachments: string[];
-  submissionTime: string;
-  repeat: {
-    type: 'daily' | 'weekly' | 'multiple_days' | 'monthly';
-  }[];
-};
-
-// job
-export type Job = {
-  id: string;
-  title: string;
-  description: string;
-  departmentId: string;
-  seniorityLevelId: string;
-  reportingManagerId: string;
-  qualificationIds: string[];
-  scheduleType: 'fixed' | 'shifts';
-  fixedSchedule?: FixedSchedule;
-  performanceMetrics: PerformanceMetric[];
-  fixedTasks: FixedTask[];
-  employeeIds: string[];
-};
+import type {
+  Department,
+  Employee,
+  Job,
+  Qualification,
+  SeniorityLevel,
+} from '../types';
 
 //------------ dbs ------------
 

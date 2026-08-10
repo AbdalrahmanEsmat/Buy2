@@ -1,15 +1,22 @@
-import Loader from '../../components/Loader';
 import Table from '../../components/Table';
-import { useJobs } from './useJobs';
 import { PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
+import type { Job } from '../../types';
 
-export default function JobTable() {
-  const { jobs, isPending, isError } = useJobs();
+type Props = {
+  searchValue: string;
+  searchResult: Record<string, Job>;
+  jobs: Record<string, Job>;
+};
 
-  //////////////////////
-  if (isPending) return <Loader />;
-  if (isError) throw new Error('could not fetch the jobs');
-  //////////////////////
+export default function JobTable({ searchValue, searchResult, jobs }: Props) {
+  let toBeShowen = jobs;
+  if (searchValue.length > 0 && Object.keys(searchResult).length > 0) {
+    toBeShowen = searchResult;
+  } else if (searchValue.length > 0 && Object.keys(searchResult).length === 0) {
+    return (
+      <p className="text-2xl text-center mt-5">No results for: {searchValue}</p>
+    );
+  }
 
   return (
     <Table className="border border-gray-200  rounded-xl">
@@ -33,7 +40,7 @@ export default function JobTable() {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {Object.values(jobs ?? {}).map((job) => (
+        {Object.values(toBeShowen).map((job) => (
           <Table.Row key={job.id} className="border-b border-b-gray-200 ">
             <Table.Cell className="py-9 pl-12 pr-8 text-black ">
               {job.title}
