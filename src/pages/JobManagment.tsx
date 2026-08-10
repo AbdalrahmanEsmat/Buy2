@@ -25,7 +25,7 @@ export default function JobManagement() {
           jobs={jobs!}
           setSearchResult={setSearchResult}
         />
-        <JobActions />
+        <JobActions setSearchValue={setSearchValue} />
       </div>
       <hr className="border-gray-200" />
       <JobTable

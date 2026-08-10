@@ -9,6 +9,8 @@ export function useDepartments() {
   } = useQuery({
     queryKey: ['departments'],
     queryFn: getDepartments,
+    staleTime: 60 * 60 * 1000,
+    gcTime: 60 * 60 * 1000,
   });
 
   return { departments, isPending, isError };
