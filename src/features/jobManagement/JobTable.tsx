@@ -52,7 +52,7 @@ export default function JobTable({ searchValue, searchResult, jobs }: Props) {
               {job.employeeIds.length}
             </Table.Cell>
             <Table.Cell>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 px-2">
                 <button className="cursor-pointer">
                   <PencilIcon className="size-8 text-blue-600" />
                 </button>

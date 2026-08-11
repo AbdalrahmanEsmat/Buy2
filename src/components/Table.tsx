@@ -33,10 +33,15 @@ function Cell({ children, className }: TableProps) {
   return <td className={className}>{children}</td>;
 }
 
+function Footer({ children, className }: TableProps) {
+  return <tfoot className={className}>{children}</tfoot>;
+}
+
 Table.Header = Header;
 Table.Column = Column;
 Table.Body = Body;
 Table.Row = Row;
 Table.Cell = Cell;
+Table.Footer = Footer;
 
 export default Table;
