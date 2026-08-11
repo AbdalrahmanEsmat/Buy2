@@ -1,13 +1,19 @@
-import { useState } from 'react';
 import * as Paginations from '@/components/application/pagination/pagination';
+import { useSearchParams } from 'react-router-dom';
 
 export const PaginationPageMinimalCenter = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const currentPage = Number(searchParams.get('page')) || 1;
+
+  function handlePageChange(page: number) {
+    searchParams.set('page', String(page));
+    setSearchParams(searchParams);
+  }
 
   return (
     <Paginations.PaginationPageMinimalCenter
       page={currentPage}
-      onPageChange={setCurrentPage}
+      onPageChange={handlePageChange}
       className="border-t-0"
     />
   );

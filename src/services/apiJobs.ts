@@ -10,11 +10,13 @@ type Props = {
     field: string;
     value: string;
   } | null;
+  page: number;
 };
 
 export async function getJobs({
   filter,
   sort,
+  page,
 }: Props): Promise<Record<string, Job>> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
