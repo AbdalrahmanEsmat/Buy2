@@ -6,6 +6,7 @@ import {
   AdjustmentsHorizontalIcon,
 } from '@heroicons/react/24/outline';
 import Loader from '../../components/Loader';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 type Props = {
   setSearchValue: Dispatch<string>;
@@ -15,6 +16,7 @@ export default function JobActions({ setSearchValue }: Props) {
   const { departments, isPending, isError } = useDepartments();
   const [searchParams, setSearchParams] = useSearchParams();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const ref = useOutsideClick(() => setIsFilterOpen(false));
 
   //////////////////////
   if (isPending) return <Loader />;
@@ -33,7 +35,7 @@ export default function JobActions({ setSearchValue }: Props) {
       </button>
 
       {/* Filter */}
-      <div className="relative h-full">
+      <div ref={ref} className="relative h-full">
         <button
           type="button"
           onClick={() => setIsFilterOpen((open) => !open)}
