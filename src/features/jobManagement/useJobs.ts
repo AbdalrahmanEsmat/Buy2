@@ -7,7 +7,6 @@ export function useJobs() {
 
   const departmentId = searchParams.get('department');
   const sortBy = searchParams.get('sort');
-  const page = !searchParams.get('page') ? 1 : Number(searchParams.get('page'));
 
   const filter = departmentId
     ? { field: 'departmentId', value: departmentId }
@@ -20,8 +19,8 @@ export function useJobs() {
     isPending,
     isError,
   } = useQuery({
-    queryKey: ['jobs', filter, sort, page],
-    queryFn: () => getJobs({ filter, sort, page }),
+    queryKey: ['jobs', filter, sort],
+    queryFn: () => getJobs({ filter, sort }),
   });
 
   return { jobs, isPending, isError };

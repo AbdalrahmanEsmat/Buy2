@@ -1,4 +1,4 @@
-import { jobs } from '../mocks/db';
+import { jobs } from '../mocks/db1';
 import type { Job } from '../types';
 
 type Props = {
@@ -10,13 +10,11 @@ type Props = {
     field: string;
     value: string;
   } | null;
-  page: number;
 };
 
 export async function getJobs({
   filter,
   sort,
-  page,
 }: Props): Promise<Record<string, Job>> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 

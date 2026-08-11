@@ -8,6 +8,7 @@ type Props = {
   setSearchValue: Dispatch<string>;
   jobs: Record<string, Job>;
   setSearchResult: Dispatch<SetStateAction<Record<string, Job>>>;
+  setCurrentPage: Dispatch<number>;
 };
 
 export default function SearchBar({
@@ -15,10 +16,12 @@ export default function SearchBar({
   setSearchValue,
   jobs,
   setSearchResult,
+  setCurrentPage,
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setCurrentPage(1);
     setSearchValue(e.target.value);
 
     const result = Object.fromEntries(

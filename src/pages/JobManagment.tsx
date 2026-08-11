@@ -10,6 +10,7 @@ export default function JobManagement() {
   const { jobs, isPending, isError } = useJobs();
   const [searcValue, setSearchValue] = useState<string>('');
   const [searchResult, setSearchResult] = useState<Record<string, Job>>({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   //////////////////////
   if (isPending) return <Loader />;
@@ -24,6 +25,7 @@ export default function JobManagement() {
           setSearchValue={setSearchValue}
           jobs={jobs!}
           setSearchResult={setSearchResult}
+          setCurrentPage={setCurrentPage}
         />
         <JobActions setSearchValue={setSearchValue} />
       </div>
@@ -32,6 +34,8 @@ export default function JobManagement() {
         searchValue={searcValue}
         searchResult={searchResult}
         jobs={jobs!}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );

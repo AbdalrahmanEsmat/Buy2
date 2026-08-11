@@ -1,4 +1,4 @@
-import { departments } from '../mocks/db';
+import { departments } from '../mocks/db1';
 import type { Department } from '../types';
 
 export async function getDepartments(): Promise<Record<string, Department>> {

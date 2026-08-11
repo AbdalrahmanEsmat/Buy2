@@ -1,20 +1,22 @@
 import * as Paginations from '@/components/application/pagination/pagination';
-import { useSearchParams } from 'react-router-dom';
 
-export const PaginationPageMinimalCenter = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const currentPage = Number(searchParams.get('page')) || 1;
+type Props = {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+};
 
-  function handlePageChange(page: number) {
-    searchParams.set('page', String(page));
-    setSearchParams(searchParams);
-  }
-
+export default function PaginationPageMinimalCenter({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: Props) {
   return (
     <Paginations.PaginationPageMinimalCenter
       page={currentPage}
-      onPageChange={handlePageChange}
+      total={totalPages}
+      onPageChange={onPageChange}
       className="border-t-0"
     />
   );
-};
+}

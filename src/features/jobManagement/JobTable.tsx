@@ -1,15 +1,26 @@
 import Table from '../../components/Table';
 import { PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 import type { Job } from '../../types';
-import { PaginationPageMinimalCenter } from '@/components/PaginationPageMinimalCenter';
+import PaginationPageMinimalCenter from '@/components/PaginationPageMinimalCenter';
+import { type Dispatch } from 'react';
 
 type Props = {
   searchValue: string;
   searchResult: Record<string, Job>;
   jobs: Record<string, Job>;
+  currentPage: number;
+  setCurrentPage: Dispatch<number>;
 };
 
-export default function JobTable({ searchValue, searchResult, jobs }: Props) {
+export default function JobTable({
+  searchValue,
+  searchResult,
+  jobs,
+  currentPage,
+  setCurrentPage,
+}: Props) {
+  const pageSize = 10;
+
   let toBeShowen = jobs;
   if (searchValue.length > 0 && Object.keys(searchResult).length > 0) {
     toBeShowen = searchResult;
@@ -18,6 +29,15 @@ export default function JobTable({ searchValue, searchResult, jobs }: Props) {
       <p className="text-2xl text-center mt-5">No results for: {searchValue}</p>
     );
   }
+
+  const totalItems = Object.keys(toBeShowen).length;
+  const totalPages = Math.ceil(totalItems / pageSize);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+
+  toBeShowen = Object.fromEntries(
+    Object.entries(toBeShowen).slice(startIndex, endIndex),
+  );
 
   return (
     <Table className="border border-gray-200  rounded-xl">
@@ -73,7 +93,11 @@ export default function JobTable({ searchValue, searchResult, jobs }: Props) {
       <Table.Footer>
         <Table.Row>
           <Table.Cell colSpan={4} className="p-12">
-            <PaginationPageMinimalCenter />
+            <PaginationPageMinimalCenter
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </Table.Cell>
         </Table.Row>
       </Table.Footer>
