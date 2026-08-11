@@ -3,8 +3,8 @@ import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/but
 import { Button } from "@/components/base/buttons/button";
 import { InputBase } from "@/components/base/input/input";
 import { Select } from "@/components/base/select/select";
-import { useBreakpoint } from "./hooks/use-breakpoint";
-import { cx } from "./utils/cx";
+import { useBreakpoint } from "@/hooks/use-breakpoint";
+import { cx } from "@/utils/cx";
 import type { PaginationRootProps } from "./pagination-base";
 import { Pagination } from "./pagination-base";
 
