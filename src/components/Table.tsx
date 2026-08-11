@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 type TableProps = {
   children: ReactNode;
   className?: string;
+  colSpan?: number;
 };
 
 function Table({ children, className }: TableProps) {
@@ -29,8 +30,12 @@ function Row({ children, className }: TableProps) {
   return <tr className={className}>{children}</tr>;
 }
 
-function Cell({ children, className }: TableProps) {
-  return <td className={className}>{children}</td>;
+function Cell({ children, className, colSpan }: TableProps) {
+  return (
+    <td className={className} colSpan={colSpan ?? 1}>
+      {children}
+    </td>
+  );
 }
 
 function Footer({ children, className }: TableProps) {

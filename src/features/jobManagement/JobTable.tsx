@@ -1,6 +1,7 @@
 import Table from '../../components/Table';
 import { PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 import type { Job } from '../../types';
+import { PaginationPageMinimalCenter } from '@/components/PaginationPageMinimalCenter';
 
 type Props = {
   searchValue: string;
@@ -69,6 +70,13 @@ export default function JobTable({ searchValue, searchResult, jobs }: Props) {
           </Table.Row>
         ))}
       </Table.Body>
+      <Table.Footer>
+        <Table.Row>
+          <Table.Cell colSpan={4} className="p-12">
+            <PaginationPageMinimalCenter />
+          </Table.Cell>
+        </Table.Row>
+      </Table.Footer>
     </Table>
   );
 }
