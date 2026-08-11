@@ -15,8 +15,10 @@ type Props = {
 export default function JobActions({ setSearchValue }: Props) {
   const { departments, isPending, isError } = useDepartments();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isSortOpen, setIsSortOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const ref = useOutsideClick(() => setIsFilterOpen(false));
+  const ref1 = useOutsideClick(() => setIsSortOpen(false));
+  const ref2 = useOutsideClick(() => setIsFilterOpen(false));
 
   //////////////////////
   if (isPending) return <Loader />;
@@ -26,16 +28,74 @@ export default function JobActions({ setSearchValue }: Props) {
   return (
     <div className="flex h-full items-center gap-8">
       {/* Sort */}
-      <button
-        type="button"
-        className="flex gap-4 h-full  w-45 items-center rounded-lg border border-gray-200 px-8 text-xs font-medium text-black"
-      >
-        <ArrowsUpDownIcon className="w-9" />
-        <span>Sort</span>
-      </button>
+      <div ref={ref1} className="relative h-full">
+        <button
+          type="button"
+          onClick={() => setIsSortOpen((open) => !open)}
+          className="flex gap-4 h-full  w-45 items-center rounded-lg border border-gray-200 px-8 text-xs font-medium text-black"
+        >
+          <ArrowsUpDownIcon className="w-9" />
+          <span>Sort</span>
+        </button>
+        {isSortOpen && (
+          <div className="absolute left-0 top-full z-50 mt-2 w-56 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg">
+            <button
+              onClick={() => {
+                searchParams.set('sort', 'title-asc');
+                searchParams.delete('page');
+                setSearchParams(searchParams);
+                setIsSortOpen(false);
+                setSearchValue('');
+              }}
+              className="w-full px-6 py-4 text-left text-sm hover:bg-gray-50 cursor-pointer"
+            >
+              Job Name (A-Z)
+            </button>
+
+            <button
+              onClick={() => {
+                searchParams.set('sort', 'title-desc');
+                searchParams.delete('page');
+                setSearchParams(searchParams);
+                setIsSortOpen(false);
+                setSearchValue('');
+              }}
+              className="w-full px-6 py-4 text-left text-sm hover:bg-gray-50 cursor-pointer"
+            >
+              Job Name (Z-A)
+            </button>
+
+            <button
+              onClick={() => {
+                searchParams.set('sort', 'employees-asc');
+                searchParams.delete('page');
+                setSearchParams(searchParams);
+                setIsSortOpen(false);
+                setSearchValue('');
+              }}
+              className="w-full px-6 py-4 text-left text-sm hover:bg-gray-50 cursor-pointer"
+            >
+              Employees (Low-High)
+            </button>
+
+            <button
+              onClick={() => {
+                searchParams.set('sort', 'employees-desc');
+                searchParams.delete('page');
+                setSearchParams(searchParams);
+                setIsSortOpen(false);
+                setSearchValue('');
+              }}
+              className="w-full px-6 py-4 text-left text-sm hover:bg-gray-50 cursor-pointer"
+            >
+              Employees (High-Low)
+            </button>
+          </div>
+        )}
+      </div>
 
       {/* Filter */}
-      <div ref={ref} className="relative h-full">
+      <div ref={ref2} className="relative h-full">
         <button
           type="button"
           onClick={() => setIsFilterOpen((open) => !open)}
@@ -79,6 +139,7 @@ export default function JobActions({ setSearchValue }: Props) {
           </div>
         )}
       </div>
+
       {/* Create */}
       <button
         type="button"

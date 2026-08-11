@@ -4,6 +4,7 @@ import Loader from './components/Loader';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
 import RoleManagement from './pages/RoleManagement';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const JobManagement = lazy(() => import('./pages/JobManagment'));
 
@@ -29,6 +30,7 @@ function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
