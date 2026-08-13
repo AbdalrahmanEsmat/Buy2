@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import JobDetails from './features/jobManagement/JobDetails';
 import JobInformation from './features/jobManagement/JobInformation';
 import JobEmployees from './features/jobManagement/JobEmployees';
+import EmployeeProfile from './features/employeeManagement/employeeProfile';
 
 const JobManagement = lazy(() => import('./pages/JobManagment'));
 
@@ -36,6 +37,10 @@ function App() {
                 <Route path="job-information" element={<JobInformation />} />
                 <Route path="job-employees" element={<JobEmployees />} />
               </Route>
+              <Route
+                path="job-management/:jobId/job-employees/:employeeId"
+                element={<EmployeeProfile />}
+              />
               <Route path="role-management" element={<RoleManagement />} />
             </Route>
           </Routes>
