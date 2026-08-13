@@ -7,14 +7,15 @@ import { useJobs } from '../features/jobManagement/useJobs';
 import type { Job } from '../types';
 
 export default function JobManagement() {
-  const { jobs, isPending, isError } = useJobs();
+  const { jobs, isPending, error } = useJobs();
   const [searcValue, setSearchValue] = useState<string>('');
   const [searchResult, setSearchResult] = useState<Record<string, Job>>({});
   const [currentPage, setCurrentPage] = useState(1);
 
   //////////////////////
   if (isPending) return <Loader />;
-  if (isError) throw new Error('could not fetch the jobs');
+  if (error) throw new Error(error.message);
+  if (!jobs) throw new Error('Jobs not foound');
   //////////////////////
 
   return (
@@ -23,7 +24,7 @@ export default function JobManagement() {
         <SearchBar
           searchValue={searcValue}
           setSearchValue={setSearchValue}
-          jobs={jobs!}
+          jobs={jobs}
           setSearchResult={setSearchResult}
           setCurrentPage={setCurrentPage}
         />
@@ -33,7 +34,7 @@ export default function JobManagement() {
       <JobTable
         searchValue={searcValue}
         searchResult={searchResult}
-        jobs={jobs!}
+        jobs={jobs}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

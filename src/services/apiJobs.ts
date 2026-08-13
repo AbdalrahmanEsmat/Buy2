@@ -1,7 +1,13 @@
-import { jobs } from '../mocks/db1';
+import {
+  departments,
+  employees,
+  jobs,
+  qualifications,
+  seniorityLevels,
+} from '../mocks/db1';
 import type { Job } from '../types';
 
-type Props = {
+type Jobs = {
   filter: {
     field: string;
     value: string;
@@ -15,7 +21,7 @@ type Props = {
 export async function getJobs({
   filter,
   sort,
-}: Props): Promise<Record<string, Job>> {
+}: Jobs): Promise<Record<string, Job>> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   let result = jobs;
@@ -51,4 +57,25 @@ export async function getJobs({
   }
 
   return result;
+}
+
+export async function getJob(jobId: string) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const job = jobs[jobId];
+
+  if (!job) {
+    throw new Error('Job not found');
+  }
+
+  return {
+    ...job,
+    department: departments[job.departmentId],
+    seniorityLevel: seniorityLevels[job.seniorityLevelId],
+    qualifications: job.qualificationIds
+      .map((id) => qualifications[id])
+      .filter(Boolean),
+    employees: job.employeeIds.map((id) => employees[id]).filter(Boolean),
+    reportingManager: employees[job.reportingManagerId].name,
+  };
 }

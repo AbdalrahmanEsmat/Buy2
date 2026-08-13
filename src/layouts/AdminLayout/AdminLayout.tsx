@@ -3,9 +3,9 @@ import AdminSideBar from './AdminSideBar';
 
 export default function AdminLayout() {
   return (
-    <div className="flex gap-12 h-screen p-8">
+    <div className="flex gap-12 p-8 relative">
       <AdminSideBar />
-      <main className="flex-1 bg-white rounded-2xl p-8 h-full">
+      <main className="flex-1 bg-white rounded-2xl p-8">
         <Outlet />
       </main>
     </div>

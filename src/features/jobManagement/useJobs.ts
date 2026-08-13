@@ -17,11 +17,11 @@ export function useJobs() {
   const {
     data: jobs,
     isPending,
-    isError,
+    error,
   } = useQuery({
     queryKey: ['jobs', filter, sort],
     queryFn: () => getJobs({ filter, sort }),
   });
 
-  return { jobs, isPending, isError };
+  return { jobs, isPending, error };
 }

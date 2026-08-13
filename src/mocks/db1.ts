@@ -1,80 +1,15 @@
 //------------ Types ------------
-
-// employee
-export type Employee = {
-  employeeId: string;
-  name: string;
-  email: string;
-  joinDate: string;
-};
-
-// qualification
-export type Qualification = {
-  id: string;
-  name: string;
-};
-
-// seniority level
-export type SeniorityLevel = {
-  id: string;
-  name: string;
-};
-
-// department
-export type Department = {
-  id: string;
-  name: string;
-};
-
-// FixedSchedule
-export type FixedSchedule = {
-  checkInFrom: string;
-  checkInTo: string;
-  checkOutFrom: string;
-  checkOutTo: string;
-  hoursPerDay: number;
-};
-
-// performance metric
-export type PerformanceMetric = {
-  name: string;
-  description: string;
-  measure: number;
-  target: number;
-  weight: number;
-};
-
-// fixed task
-export type FixedTask = {
-  name: string;
-  description: string;
-  steps: string[];
-  attachments: string[];
-  submissionTime: string;
-  repeat: {
-    type: 'daily' | 'weekly' | 'multiple_days' | 'monthly';
-  }[];
-};
-
-// job
-export type Job = {
-  id: string;
-  title: string;
-  description: string;
-  departmentId: string;
-  seniorityLevelId: string;
-  reportingManagerId: string;
-  qualificationIds: string[];
-  scheduleType: 'fixed' | 'shifts';
-  fixedSchedule?: FixedSchedule;
-  performanceMetrics: PerformanceMetric[];
-  fixedTasks: FixedTask[];
-  employeeIds: string[];
-};
+import type {
+  Department,
+  Employee,
+  Job,
+  Qualification,
+  SeniorityLevel,
+} from '@/types';
 
 //------------ dbs ------------
 
-// 23 employees
+// 51 employees
 export const employees: Record<string, Employee> = {
   'emp-001': {
     employeeId: 'emp-001',
@@ -213,6 +148,194 @@ export const employees: Record<string, Employee> = {
     name: 'Othman Reda',
     email: 'othman.reda@buy2.com',
     joinDate: '2025-01-13',
+  },
+  'emp-024': {
+    employeeId: 'emp-024',
+    name: 'Amr Hamdy',
+    email: 'amr.hamdy@buy2.com',
+    joinDate: '2024-10-14',
+  },
+
+  'emp-025': {
+    employeeId: 'emp-025',
+    name: 'Mona Adel',
+    email: 'mona.adel@buy2.com',
+    joinDate: '2023-03-20',
+  },
+
+  'emp-026': {
+    employeeId: 'emp-026',
+    name: 'Omar Hany',
+    email: 'omar.hany@buy2.com',
+    joinDate: '2024-01-29',
+  },
+
+  'emp-027': {
+    employeeId: 'emp-027',
+    name: 'Rana Mahmoud',
+    email: 'rana.mahmoud@buy2.com',
+    joinDate: '2024-02-12',
+  },
+
+  'emp-028': {
+    employeeId: 'emp-028',
+    name: 'Ehab Mostafa',
+    email: 'ehab.mostafa@buy2.com',
+    joinDate: '2023-06-26',
+  },
+
+  'emp-029': {
+    employeeId: 'emp-029',
+    name: 'Mai Tarek',
+    email: 'mai.tarek@buy2.com',
+    joinDate: '2024-03-11',
+  },
+
+  'emp-030': {
+    employeeId: 'emp-030',
+    name: 'Yassin Ahmed',
+    email: 'yassin.ahmed@buy2.com',
+    joinDate: '2023-11-27',
+  },
+
+  'emp-031': {
+    employeeId: 'emp-031',
+    name: 'Heba Khaled',
+    email: 'heba.khaled@buy2.com',
+    joinDate: '2024-04-08',
+  },
+
+  'emp-032': {
+    employeeId: 'emp-032',
+    name: 'Karim Adel',
+    email: 'karim.adel@buy2.com',
+    joinDate: '2024-05-20',
+  },
+
+  'emp-033': {
+    employeeId: 'emp-033',
+    name: 'Nada Hassan',
+    email: 'nada.hassan@buy2.com',
+    joinDate: '2023-08-07',
+  },
+
+  'emp-034': {
+    employeeId: 'emp-034',
+    name: 'Sherif Nabil',
+    email: 'sherif.nabil@buy2.com',
+    joinDate: '2024-06-03',
+  },
+
+  'emp-035': {
+    employeeId: 'emp-035',
+    name: 'Dalia Samir',
+    email: 'dalia.samir@buy2.com',
+    joinDate: '2023-12-18',
+  },
+
+  'emp-036': {
+    employeeId: 'emp-036',
+    name: 'Mahmoud Ashraf',
+    email: 'mahmoud.ashraf@buy2.com',
+    joinDate: '2024-07-22',
+  },
+
+  'emp-037': {
+    employeeId: 'emp-037',
+    name: 'Aya Mostafa',
+    email: 'aya.mostafa@buy2.com',
+    joinDate: '2024-08-05',
+  },
+
+  'emp-038': {
+    employeeId: 'emp-038',
+    name: 'Hossam Fathy',
+    email: 'hossam.fathy@buy2.com',
+    joinDate: '2023-09-04',
+  },
+
+  'emp-039': {
+    employeeId: 'emp-039',
+    name: 'Menna Wael',
+    email: 'menna.wael@buy2.com',
+    joinDate: '2024-09-09',
+  },
+
+  'emp-040': {
+    employeeId: 'emp-040',
+    name: 'Tarek Emad',
+    email: 'tarek.emad@buy2.com',
+    joinDate: '2023-05-15',
+  },
+
+  'emp-041': {
+    employeeId: 'emp-041',
+    name: 'Esraa Nasser',
+    email: 'esraa.nasser@buy2.com',
+    joinDate: '2024-10-21',
+  },
+
+  'emp-042': {
+    employeeId: 'emp-042',
+    name: 'Mostafa Reda',
+    email: 'mostafa.reda@buy2.com',
+    joinDate: '2025-02-03',
+  },
+
+  'emp-043': {
+    employeeId: 'emp-043',
+    name: 'Rania Fathy',
+    email: 'rania.fathy@buy2.com',
+    joinDate: '2023-07-24',
+  },
+
+  'emp-044': {
+    employeeId: 'emp-044',
+    name: 'Ahmed Nasser',
+    email: 'ahmed.nasser@buy2.com',
+    joinDate: '2024-11-18',
+  },
+
+  'emp-045': {
+    employeeId: 'emp-045',
+    name: 'Yara Emad',
+    email: 'yara.emad@buy2.com',
+    joinDate: '2025-03-10',
+  },
+
+  'emp-046': {
+    employeeId: 'emp-046',
+    name: 'Khaled Hassan',
+    email: 'khaled.hassan@buy2.com',
+    joinDate: '2023-10-16',
+  },
+
+  'emp-047': {
+    employeeId: 'emp-047',
+    name: 'Salma Ibrahim',
+    email: 'salma.ibrahim@buy2.com',
+    joinDate: '2024-12-02',
+  },
+
+  'emp-048': {
+    employeeId: 'emp-048',
+    name: 'Mazen Ali',
+    email: 'mazen.ali@buy2.com',
+    joinDate: '2025-04-07',
+  },
+
+  'emp-049': {
+    employeeId: 'emp-049',
+    name: 'Farida Sameh',
+    email: 'farida.sameh@buy2.com',
+    joinDate: '2024-12-16',
+  },
+
+  'emp-050': {
+    employeeId: 'emp-050',
+    name: 'Nouran Magdy',
+    email: 'nouran.magdy@buy2.com',
+    joinDate: '2025-05-12',
   },
 };
 
@@ -541,7 +664,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Development Task',
-        description: 'Complete assigned development work according to requirements.',
+        description:
+          'Complete assigned development work according to requirements.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -549,14 +673,15 @@ export const jobs: Record<string, Job> = {
           'Record any issues or follow-up actions.',
           'Submit the completed task.',
         ],
-        attachments: [],
-        submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
+        attachments: [
+          '../FakeFiles/jobManagement/Buy2 Business.docx',
+          '../FakeFiles/jobManagement/Buy2 Technical.docx',
         ],
+        submissionTime: '17:00',
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-002'],
+    employeeIds: ['emp-002', 'emp-024', 'emp-025'],
   },
   'job-002': {
     id: 'job-002',
@@ -593,7 +718,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Development Task',
-        description: 'Complete assigned development work according to requirements.',
+        description:
+          'Complete assigned development work according to requirements.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -603,12 +729,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-003'],
+    employeeIds: ['emp-003', 'emp-026', 'emp-027'],
   },
   'job-003': {
     id: 'job-003',
@@ -638,7 +762,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Sales Follow-Up',
-        description: 'Follow up with assigned customers and update opportunity status.',
+        description:
+          'Follow up with assigned customers and update opportunity status.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -648,12 +773,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-004'],
+    employeeIds: ['emp-004', 'emp-028', 'emp-029', 'emp-030'],
   },
   'job-004': {
     id: 'job-004',
@@ -693,12 +816,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-005'],
+    employeeIds: ['emp-005', 'emp-031', 'emp-032'],
   },
   'job-005': {
     id: 'job-005',
@@ -745,12 +866,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'weekly' },
-        ],
+        repeat: ['weekly'],
       },
     ],
-    employeeIds: ['emp-006'],
+    employeeIds: ['emp-006', 'emp-033', 'emp-034'],
   },
   'job-006': {
     id: 'job-006',
@@ -787,7 +906,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -797,12 +917,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-007'],
+    employeeIds: ['emp-007', 'emp-035'],
   },
   'job-007': {
     id: 'job-007',
@@ -839,7 +957,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -849,12 +968,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-008'],
+    employeeIds: ['emp-008', 'emp-036'],
   },
   'job-008': {
     id: 'job-008',
@@ -884,7 +1001,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -894,12 +1012,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-009'],
+    employeeIds: ['emp-009', 'emp-037', 'emp-038'],
   },
   'job-009': {
     id: 'job-009',
@@ -929,7 +1045,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -939,12 +1056,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-010'],
+    employeeIds: ['emp-010', 'emp-039'],
   },
   'job-010': {
     id: 'job-010',
@@ -981,7 +1096,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -991,12 +1107,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'weekly' },
-        ],
+        repeat: ['weekly'],
       },
     ],
-    employeeIds: ['emp-011'],
+    employeeIds: ['emp-011', 'emp-040'],
   },
   'job-011': {
     id: 'job-011',
@@ -1033,7 +1147,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1043,12 +1158,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-012'],
+    employeeIds: ['emp-012', 'emp-041'],
   },
   'job-012': {
     id: 'job-012',
@@ -1078,7 +1191,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1088,17 +1202,16 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-013'],
+    employeeIds: ['emp-013', 'emp-042'],
   },
   'job-013': {
     id: 'job-013',
     title: 'Legal Specialist',
-    description: 'Support contracts, legal documentation, and compliance matters.',
+    description:
+      'Support contracts, legal documentation, and compliance matters.',
     departmentId: 'dep-013',
     seniorityLevelId: 'sen-003',
     reportingManagerId: 'emp-016',
@@ -1130,7 +1243,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1140,17 +1254,16 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-014'],
+    employeeIds: ['emp-014', 'emp-043'],
   },
   'job-014': {
     id: 'job-014',
     title: 'Administrative Coordinator',
-    description: 'Coordinate administrative requests and company documentation.',
+    description:
+      'Coordinate administrative requests and company documentation.',
     departmentId: 'dep-014',
     seniorityLevelId: 'sen-002',
     reportingManagerId: 'emp-017',
@@ -1182,7 +1295,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1192,17 +1306,16 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-015'],
+    employeeIds: ['emp-015', 'emp-044'],
   },
   'job-015': {
     id: 'job-015',
     title: 'Business Development Executive',
-    description: 'Identify growth opportunities and develop strategic accounts.',
+    description:
+      'Identify growth opportunities and develop strategic accounts.',
     departmentId: 'dep-015',
     seniorityLevelId: 'sen-004',
     reportingManagerId: 'emp-018',
@@ -1234,7 +1347,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1244,12 +1358,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'weekly' },
-        ],
+        repeat: ['weekly'],
       },
     ],
-    employeeIds: ['emp-016'],
+    employeeIds: ['emp-016', 'emp-045'],
   },
   'job-016': {
     id: 'job-016',
@@ -1286,7 +1398,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1296,12 +1409,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-017'],
+    employeeIds: ['emp-017', 'emp-046'],
   },
   'job-017': {
     id: 'job-017',
@@ -1331,7 +1442,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1341,17 +1453,16 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-018'],
+    employeeIds: ['emp-018', 'emp-047'],
   },
   'job-018': {
     id: 'job-018',
     title: 'Training Coordinator',
-    description: 'Coordinate employee training programs and learning activities.',
+    description:
+      'Coordinate employee training programs and learning activities.',
     departmentId: 'dep-018',
     seniorityLevelId: 'sen-002',
     reportingManagerId: 'emp-021',
@@ -1383,7 +1494,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1393,17 +1505,16 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-019'],
+    employeeIds: ['emp-019', 'emp-048'],
   },
   'job-019': {
     id: 'job-019',
     title: 'Facilities Coordinator',
-    description: 'Manage workplace facilities, maintenance, and service requests.',
+    description:
+      'Manage workplace facilities, maintenance, and service requests.',
     departmentId: 'dep-019',
     seniorityLevelId: 'sen-003',
     reportingManagerId: 'emp-022',
@@ -1435,7 +1546,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1445,12 +1557,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
-    employeeIds: ['emp-020'],
+    employeeIds: ['emp-020', 'emp-049'],
   },
   'job-020': {
     id: 'job-020',
@@ -1480,7 +1590,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1490,12 +1601,10 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'weekly' },
-        ],
+        repeat: ['weekly'],
       },
     ],
-    employeeIds: ['emp-021'],
+    employeeIds: ['emp-021', 'emp-050'],
   },
   'job-021': {
     id: 'job-021',
@@ -1525,7 +1634,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1535,9 +1645,7 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
     employeeIds: ['emp-022'],
@@ -1545,7 +1653,8 @@ export const jobs: Record<string, Job> = {
   'job-022': {
     id: 'job-022',
     title: 'Compliance Officer',
-    description: 'Monitor compliance requirements and maintain audit readiness.',
+    description:
+      'Monitor compliance requirements and maintain audit readiness.',
     departmentId: 'dep-022',
     seniorityLevelId: 'sen-004',
     reportingManagerId: 'emp-002',
@@ -1577,7 +1686,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1587,9 +1697,7 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
     employeeIds: ['emp-023'],
@@ -1629,7 +1737,8 @@ export const jobs: Record<string, Job> = {
     fixedTasks: [
       {
         name: 'Daily Task',
-        description: 'Complete assigned responsibilities and submit the required update.',
+        description:
+          'Complete assigned responsibilities and submit the required update.',
         steps: [
           'Review the assigned work and requirements.',
           'Complete the required activities.',
@@ -1639,9 +1748,7 @@ export const jobs: Record<string, Job> = {
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: [
-          { type: 'daily' },
-        ],
+        repeat: ['daily'],
       },
     ],
     employeeIds: [],

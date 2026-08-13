@@ -13,7 +13,7 @@ type Props = {
 };
 
 export default function JobActions({ setSearchValue }: Props) {
-  const { departments, isPending, isError } = useDepartments();
+  const { departments, isPending, error } = useDepartments();
   const [searchParams, setSearchParams] = useSearchParams();
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -22,7 +22,8 @@ export default function JobActions({ setSearchValue }: Props) {
 
   //////////////////////
   if (isPending) return <Loader />;
-  if (isError) throw new Error('could not fetch the departments');
+  if (error) throw new Error(error.message);
+  if (!departments) throw new Error('departments not found');
   //////////////////////
 
   return (
@@ -120,7 +121,7 @@ export default function JobActions({ setSearchValue }: Props) {
             >
               All
             </button>
-            {Object.values(departments!).map((department) => (
+            {Object.values(departments).map((department) => (
               <button
                 key={department.id}
                 type="button"

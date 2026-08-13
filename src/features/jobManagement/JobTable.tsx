@@ -3,6 +3,7 @@ import { PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 import type { Job } from '../../types';
 import PaginationPageMinimalCenter from '@/components/PaginationPageMinimalCenter';
 import { type Dispatch } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   searchValue: string;
@@ -19,6 +20,7 @@ export default function JobTable({
   currentPage,
   setCurrentPage,
 }: Props) {
+  const Navigate = useNavigate();
   const pageSize = 10;
 
   let toBeShowen = jobs;
@@ -82,7 +84,10 @@ export default function JobTable({
                   <TrashIcon className="size-8 text-red-500" />
                 </button>
 
-                <button className="cursor-pointer">
+                <button
+                  className="cursor-pointer"
+                  onClick={() => Navigate(`/job-management/${job.id}`)}
+                >
                   <EyeIcon className="size-8 text-blue-600" />
                 </button>
               </div>

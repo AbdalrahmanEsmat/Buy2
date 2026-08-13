@@ -5,7 +5,7 @@ export function useDepartments() {
   const {
     data: departments,
     isPending,
-    isError,
+    error,
   } = useQuery({
     queryKey: ['departments'],
     queryFn: getDepartments,
@@ -13,5 +13,5 @@ export function useDepartments() {
     gcTime: 60 * 60 * 1000,
   });
 
-  return { departments, isPending, isError };
+  return { departments, isPending, error };
 }
