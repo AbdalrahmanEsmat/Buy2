@@ -15,7 +15,7 @@ export default function FixedTasksSchedule({
   fixedTasks,
   withActions = false,
   handleDeleteTask,
-  handleEditTask,
+  // handleEditTask,
 }: Props) {
   const [selectedTask, setSelectedTask] = useState<FixedTask | null>(null);
   return (
