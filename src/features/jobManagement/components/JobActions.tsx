@@ -1,18 +1,20 @@
 import { useState, type Dispatch } from 'react';
-import { useDepartments } from '../departmentManagement/useDepartments';
-import { useSearchParams } from 'react-router-dom';
+
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   ArrowsUpDownIcon,
   AdjustmentsHorizontalIcon,
 } from '@heroicons/react/24/outline';
-import Loader from '../../components/Loader';
-import { useOutsideClick } from '../../hooks/useOutsideClick';
+import Loader from '../../../components/Loader';
+import { useOutsideClick } from '../../../hooks/useOutsideClick';
+import { useDepartments } from '@/features/departmentManagement/useDepartments';
 
 type Props = {
   setSearchValue: Dispatch<string>;
 };
 
 export default function JobActions({ setSearchValue }: Props) {
+  const navigate = useNavigate();
   const { departments, isPending, error } = useDepartments();
   const [searchParams, setSearchParams] = useSearchParams();
   const [isSortOpen, setIsSortOpen] = useState(false);
@@ -144,7 +146,8 @@ export default function JobActions({ setSearchValue }: Props) {
       {/* Create */}
       <button
         type="button"
-        className="w-95 h-full rounded-lg bg-[#243F9B] px-12 text-xs font-medium text-white"
+        className="w-95 h-full rounded-lg bg-[#243F9B] px-12 text-xs font-medium text-white cursor-pointer"
+        onClick={() => navigate('/job-management/create-job')}
       >
         Create a New Job
       </button>

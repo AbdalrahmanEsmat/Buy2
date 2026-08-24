@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import Loader from '../components/Loader';
-import SearchBar from '../components/SearchBar';
-import JobActions from '../features/jobManagement/JobActions';
-import JobTable from '../features/jobManagement/JobTable';
+import JobsSearchBar from '../features/jobManagement/components/JobsSearchBar';
+import JobActions from '../features/jobManagement/components/JobActions';
+import JobTable from '../features/jobManagement/components/JobTable';
 import { useJobs } from '../features/jobManagement/useJobs';
 import type { Job } from '../types';
+import PageContainer from '../components/PageContainer';
 
 export default function JobManagement() {
   const { jobs, isPending, error } = useJobs();
   const [searcValue, setSearchValue] = useState<string>('');
-  const [searchResult, setSearchResult] = useState<Record<string, Job>>({});
+  const [searchResult, setSearchResult] = useState<Job[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   //////////////////////
@@ -19,9 +20,9 @@ export default function JobManagement() {
   //////////////////////
 
   return (
-    <div className="flex flex-col gap-8">
+    <PageContainer className="flex flex-col gap-8">
       <div className="flex gap-8 h-24">
-        <SearchBar
+        <JobsSearchBar
           searchValue={searcValue}
           setSearchValue={setSearchValue}
           jobs={jobs}
@@ -38,6 +39,6 @@ export default function JobManagement() {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-    </div>
+    </PageContainer>
   );
 }

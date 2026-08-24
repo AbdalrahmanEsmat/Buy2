@@ -18,26 +18,21 @@ type Jobs = {
   } | null;
 };
 
-export async function getJobs({
-  filter,
-  sort,
-}: Jobs): Promise<Record<string, Job>> {
+export async function getJobs({ filter, sort }: Jobs): Promise<Job[]> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  let result = jobs;
+  let result = [...jobs];
 
   if (filter) {
-    result = Object.fromEntries(
-      Object.entries(jobs).filter(
-        ([, job]) => job[filter.field as keyof Job] === filter.value,
-      ),
+    result = result.filter(
+      (job) => job[filter.field as keyof Job] === filter.value,
     );
   }
 
   if (sort) {
     const [field, direction] = sort.value.split('-');
 
-    const sortedJobs = Object.entries(result).sort(([, jobA], [, jobB]) => {
+    result.sort((jobA, jobB) => {
       if (field === 'title') {
         return direction === 'asc'
           ? jobA.title.localeCompare(jobB.title)
@@ -52,8 +47,6 @@ export async function getJobs({
 
       return 0;
     });
-
-    result = Object.fromEntries(sortedJobs);
   }
 
   return result;
@@ -62,20 +55,106 @@ export async function getJobs({
 export async function getJob(jobId: string) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const job = jobs[jobId];
+  const job = jobs.find((job) => job.id === jobId);
 
   if (!job) {
     throw new Error('Job not found');
   }
 
+  const department = departments.find(
+    (department) => department.id === job.departmentId,
+  );
+
+  const seniorityLevel = seniorityLevels.find(
+    (seniority) => seniority.id === job.seniorityLevelId,
+  );
+
+  const jobQualifications = job.qualificationIds
+    .map((id) =>
+      qualifications.find((qualification) => qualification.id === id),
+    )
+    .filter((qualification) => qualification !== undefined);
+
+  const jobEmployees = job.employeeIds
+    .map((id) => employees.find((employee) => employee.id === id))
+    .filter((employee) => employee !== undefined);
+
+  const reportingManager = employees.find(
+    (employee) => employee.id === job.reportingManagerId,
+  )?.name;
+
   return {
     ...job,
-    department: departments[job.departmentId],
-    seniorityLevel: seniorityLevels[job.seniorityLevelId],
-    qualifications: job.qualificationIds
-      .map((id) => qualifications[id])
-      .filter(Boolean),
-    employees: job.employeeIds.map((id) => employees[id]).filter(Boolean),
-    reportingManager: employees[job.reportingManagerId].name,
+    department,
+    seniorityLevel,
+    qualifications: jobQualifications,
+    employees: jobEmployees,
+    reportingManager,
   };
+}
+
+export async function createEditJob({
+  newJob,
+  id,
+}: {
+  newJob: Job;
+  id?: string;
+}) {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
+  if (!newJob) {
+    throw new Error('Job data is required');
+  }
+
+  if (id) {
+    const job: Job = {
+      id,
+      title: newJob.title,
+      description: newJob.description,
+      departmentId: newJob.departmentId,
+      seniorityLevelId: newJob.seniorityLevelId,
+      reportingManagerId: newJob.reportingManagerId,
+      qualificationIds: newJob.qualificationIds,
+      scheduleType: newJob.scheduleType,
+      fixedSchedule: newJob.fixedSchedule,
+      performanceMetrics: newJob.performanceMetrics,
+      fixedTasks: newJob.fixedTasks,
+      employeeIds: newJob.employeeIds,
+    };
+
+    const jobIndex = jobs.findIndex((job) => job.id === id);
+    if (jobIndex === -1) {
+      throw new Error('Job not found');
+    }
+    jobs[jobIndex] = job;
+    return;
+  }
+
+  const job: Job = {
+    id: crypto.randomUUID(),
+    title: newJob.title,
+    description: newJob.description,
+    departmentId: newJob.departmentId,
+    seniorityLevelId: newJob.seniorityLevelId,
+    reportingManagerId: newJob.reportingManagerId,
+    qualificationIds: newJob.qualificationIds,
+    scheduleType: newJob.scheduleType,
+    fixedSchedule: newJob.fixedSchedule,
+    performanceMetrics: newJob.performanceMetrics,
+    fixedTasks: newJob.fixedTasks,
+    employeeIds: [],
+  };
+
+  jobs.push(job);
+
+  return;
+}
+
+export async function deleteJob(jobId: string) {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+  const jobIndex = jobs.findIndex((job) => job.id === jobId);
+  if (jobIndex === -1) {
+    throw new Error('Job not found');
+  }
+  jobs.splice(jobIndex, 1);
 }

@@ -14,7 +14,7 @@ export default function AdminSideBar() {
 
   return (
     <aside
-      className={`sticky top-8 bg-white flex flex-col  gap-8 py-16 h-screen rounded-2xl transition-[width] duration-300 ease-in-out ${isCollapsed ? 'w-[calc(88/16*1rem)]' : 'w-[calc(298/16*1rem)]'}`}
+      className={`sticky top-8 bg-white flex flex-col gap-8 py-16 rounded-2xl transition-[width] duration-300 ease-in-out ${isCollapsed ? 'w-[calc(88/16*1rem)]' : 'w-[calc(298/16*1rem)]'}`}
     >
       {/* header  */}
       <div

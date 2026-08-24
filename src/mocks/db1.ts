@@ -10,626 +10,670 @@ import type {
 //------------ dbs ------------
 
 // 51 employees
-export const employees: Record<string, Employee> = {
-  'emp-001': {
-    employeeId: 'emp-001',
+export const employees: Employee[] = [
+  {
+    id: 'emp-001',
     name: 'Ahmed Hassan',
     email: 'ahmed.hassan@buy2.com',
     joinDate: '2023-02-15',
   },
-  'emp-002': {
-    employeeId: 'emp-002',
+  {
+    id: 'emp-002',
     name: 'Sara Mohamed',
     email: 'sara.mohamed@buy2.com',
     joinDate: '2023-06-10',
   },
-  'emp-003': {
-    employeeId: 'emp-003',
+  {
+    id: 'emp-003',
     name: 'Omar Ali',
     email: 'omar.ali@buy2.com',
     joinDate: '2024-01-08',
   },
-  'emp-004': {
-    employeeId: 'emp-004',
+  {
+    id: 'emp-004',
     name: 'Nour Ibrahim',
     email: 'nour.ibrahim@buy2.com',
     joinDate: '2024-04-22',
   },
-  'emp-005': {
-    employeeId: 'emp-005',
+  {
+    id: 'emp-005',
     name: 'Youssef Khaled',
     email: 'youssef.khaled@buy2.com',
     joinDate: '2024-09-01',
   },
-  'emp-006': {
-    employeeId: 'emp-006',
+  {
+    id: 'emp-006',
     name: 'Mariam Adel',
     email: 'mariam.adel@buy2.com',
     joinDate: '2023-11-12',
   },
-  'emp-007': {
-    employeeId: 'emp-007',
+  {
+    id: 'emp-007',
     name: 'Karim Samir',
     email: 'karim.samir@buy2.com',
     joinDate: '2024-02-19',
   },
-  'emp-008': {
-    employeeId: 'emp-008',
+  {
+    id: 'emp-008',
     name: 'Hana Mostafa',
     email: 'hana.mostafa@buy2.com',
     joinDate: '2024-03-25',
   },
-  'emp-009': {
-    employeeId: 'emp-009',
+  {
+    id: 'emp-009',
     name: 'Mahmoud Tarek',
     email: 'mahmoud.tarek@buy2.com',
     joinDate: '2023-08-14',
   },
-  'emp-010': {
-    employeeId: 'emp-010',
+  {
+    id: 'emp-010',
     name: 'Laila Fathy',
     email: 'laila.fathy@buy2.com',
     joinDate: '2024-05-06',
   },
-  'emp-011': {
-    employeeId: 'emp-011',
+  {
+    id: 'emp-011',
     name: 'Adam Nabil',
     email: 'adam.nabil@buy2.com',
     joinDate: '2023-10-02',
   },
-  'emp-012': {
-    employeeId: 'emp-012',
+  {
+    id: 'emp-012',
     name: 'Salma Wael',
     email: 'salma.wael@buy2.com',
     joinDate: '2024-06-17',
   },
-  'emp-013': {
-    employeeId: 'emp-013',
+  {
+    id: 'emp-013',
     name: 'Hassan Emad',
     email: 'hassan.emad@buy2.com',
     joinDate: '2023-04-29',
   },
-  'emp-014': {
-    employeeId: 'emp-014',
+  {
+    id: 'emp-014',
     name: 'Jana Hossam',
     email: 'jana.hossam@buy2.com',
     joinDate: '2024-07-08',
   },
-  'emp-015': {
-    employeeId: 'emp-015',
+  {
+    id: 'emp-015',
     name: 'Mostafa Ayman',
     email: 'mostafa.ayman@buy2.com',
     joinDate: '2023-12-04',
   },
-  'emp-016': {
-    employeeId: 'emp-016',
+  {
+    id: 'emp-016',
     name: 'Reem Ashraf',
     email: 'reem.ashraf@buy2.com',
     joinDate: '2024-08-21',
   },
-  'emp-017': {
-    employeeId: 'emp-017',
+  {
+    id: 'emp-017',
     name: 'Khaled Wael',
     email: 'khaled.wael@buy2.com',
     joinDate: '2023-07-11',
   },
-  'emp-018': {
-    employeeId: 'emp-018',
+  {
+    id: 'emp-018',
     name: 'Dina Sameh',
     email: 'dina.sameh@buy2.com',
     joinDate: '2024-09-16',
   },
-  'emp-019': {
-    employeeId: 'emp-019',
+  {
+    id: 'emp-019',
     name: 'Tamer Nasser',
     email: 'tamer.nasser@buy2.com',
     joinDate: '2023-05-23',
   },
-  'emp-020': {
-    employeeId: 'emp-020',
+  {
+    id: 'emp-020',
     name: 'Farah Magdy',
     email: 'farah.magdy@buy2.com',
     joinDate: '2024-10-01',
   },
-  'emp-021': {
-    employeeId: 'emp-021',
+  {
+    id: 'emp-021',
     name: 'Ziad Fares',
     email: 'ziad.fares@buy2.com',
     joinDate: '2023-09-18',
   },
-  'emp-022': {
-    employeeId: 'emp-022',
+  {
+    id: 'emp-022',
     name: 'Aya Sherif',
     email: 'aya.sherif@buy2.com',
     joinDate: '2024-11-05',
   },
-  'emp-023': {
-    employeeId: 'emp-023',
+  {
+    id: 'emp-023',
     name: 'Othman Reda',
     email: 'othman.reda@buy2.com',
     joinDate: '2025-01-13',
   },
-  'emp-024': {
-    employeeId: 'emp-024',
+  {
+    id: 'emp-024',
     name: 'Amr Hamdy',
     email: 'amr.hamdy@buy2.com',
     joinDate: '2024-10-14',
   },
-
-  'emp-025': {
-    employeeId: 'emp-025',
+  {
+    id: 'emp-025',
     name: 'Mona Adel',
     email: 'mona.adel@buy2.com',
     joinDate: '2023-03-20',
   },
-
-  'emp-026': {
-    employeeId: 'emp-026',
+  {
+    id: 'emp-026',
     name: 'Omar Hany',
     email: 'omar.hany@buy2.com',
     joinDate: '2024-01-29',
   },
-
-  'emp-027': {
-    employeeId: 'emp-027',
+  {
+    id: 'emp-027',
     name: 'Rana Mahmoud',
     email: 'rana.mahmoud@buy2.com',
     joinDate: '2024-02-12',
   },
-
-  'emp-028': {
-    employeeId: 'emp-028',
+  {
+    id: 'emp-028',
     name: 'Ehab Mostafa',
     email: 'ehab.mostafa@buy2.com',
     joinDate: '2023-06-26',
   },
-
-  'emp-029': {
-    employeeId: 'emp-029',
+  {
+    id: 'emp-029',
     name: 'Mai Tarek',
     email: 'mai.tarek@buy2.com',
     joinDate: '2024-03-11',
   },
-
-  'emp-030': {
-    employeeId: 'emp-030',
+  {
+    id: 'emp-030',
     name: 'Yassin Ahmed',
     email: 'yassin.ahmed@buy2.com',
     joinDate: '2023-11-27',
   },
-
-  'emp-031': {
-    employeeId: 'emp-031',
+  {
+    id: 'emp-031',
     name: 'Heba Khaled',
     email: 'heba.khaled@buy2.com',
     joinDate: '2024-04-08',
   },
-
-  'emp-032': {
-    employeeId: 'emp-032',
+  {
+    id: 'emp-032',
     name: 'Karim Adel',
     email: 'karim.adel@buy2.com',
     joinDate: '2024-05-20',
   },
-
-  'emp-033': {
-    employeeId: 'emp-033',
+  {
+    id: 'emp-033',
     name: 'Nada Hassan',
     email: 'nada.hassan@buy2.com',
     joinDate: '2023-08-07',
   },
-
-  'emp-034': {
-    employeeId: 'emp-034',
+  {
+    id: 'emp-034',
     name: 'Sherif Nabil',
     email: 'sherif.nabil@buy2.com',
     joinDate: '2024-06-03',
   },
-
-  'emp-035': {
-    employeeId: 'emp-035',
+  {
+    id: 'emp-035',
     name: 'Dalia Samir',
     email: 'dalia.samir@buy2.com',
     joinDate: '2023-12-18',
   },
-
-  'emp-036': {
-    employeeId: 'emp-036',
+  {
+    id: 'emp-036',
     name: 'Mahmoud Ashraf',
     email: 'mahmoud.ashraf@buy2.com',
     joinDate: '2024-07-22',
   },
-
-  'emp-037': {
-    employeeId: 'emp-037',
+  {
+    id: 'emp-037',
     name: 'Aya Mostafa',
     email: 'aya.mostafa@buy2.com',
     joinDate: '2024-08-05',
   },
-
-  'emp-038': {
-    employeeId: 'emp-038',
+  {
+    id: 'emp-038',
     name: 'Hossam Fathy',
     email: 'hossam.fathy@buy2.com',
     joinDate: '2023-09-04',
   },
-
-  'emp-039': {
-    employeeId: 'emp-039',
+  {
+    id: 'emp-039',
     name: 'Menna Wael',
     email: 'menna.wael@buy2.com',
     joinDate: '2024-09-09',
   },
-
-  'emp-040': {
-    employeeId: 'emp-040',
+  {
+    id: 'emp-040',
     name: 'Tarek Emad',
     email: 'tarek.emad@buy2.com',
     joinDate: '2023-05-15',
   },
-
-  'emp-041': {
-    employeeId: 'emp-041',
+  {
+    id: 'emp-041',
     name: 'Esraa Nasser',
     email: 'esraa.nasser@buy2.com',
     joinDate: '2024-10-21',
   },
-
-  'emp-042': {
-    employeeId: 'emp-042',
+  {
+    id: 'emp-042',
     name: 'Mostafa Reda',
     email: 'mostafa.reda@buy2.com',
     joinDate: '2025-02-03',
   },
-
-  'emp-043': {
-    employeeId: 'emp-043',
+  {
+    id: 'emp-043',
     name: 'Rania Fathy',
     email: 'rania.fathy@buy2.com',
     joinDate: '2023-07-24',
   },
-
-  'emp-044': {
-    employeeId: 'emp-044',
+  {
+    id: 'emp-044',
     name: 'Ahmed Nasser',
     email: 'ahmed.nasser@buy2.com',
     joinDate: '2024-11-18',
   },
-
-  'emp-045': {
-    employeeId: 'emp-045',
+  {
+    id: 'emp-045',
     name: 'Yara Emad',
     email: 'yara.emad@buy2.com',
     joinDate: '2025-03-10',
   },
-
-  'emp-046': {
-    employeeId: 'emp-046',
+  {
+    id: 'emp-046',
     name: 'Khaled Hassan',
     email: 'khaled.hassan@buy2.com',
     joinDate: '2023-10-16',
   },
-
-  'emp-047': {
-    employeeId: 'emp-047',
+  {
+    id: 'emp-047',
     name: 'Salma Ibrahim',
     email: 'salma.ibrahim@buy2.com',
     joinDate: '2024-12-02',
   },
-
-  'emp-048': {
-    employeeId: 'emp-048',
+  {
+    id: 'emp-048',
     name: 'Mazen Ali',
     email: 'mazen.ali@buy2.com',
     joinDate: '2025-04-07',
   },
-
-  'emp-049': {
-    employeeId: 'emp-049',
+  {
+    id: 'emp-049',
     name: 'Farida Sameh',
     email: 'farida.sameh@buy2.com',
     joinDate: '2024-12-16',
   },
-
-  'emp-050': {
-    employeeId: 'emp-050',
+  {
+    id: 'emp-050',
     name: 'Nouran Magdy',
     email: 'nouran.magdy@buy2.com',
     joinDate: '2025-05-12',
   },
-};
+];
 
 // 23 qualifications
-export const qualifications: Record<string, Qualification> = {
-  'qual-001': {
+export const qualifications: Qualification[] = [
+  {
     id: 'qual-001',
     name: 'React',
   },
-  'qual-002': {
+  {
     id: 'qual-002',
     name: 'Node.js',
   },
-  'qual-003': {
+  {
     id: 'qual-003',
     name: 'Project Management',
   },
-  'qual-004': {
+  {
     id: 'qual-004',
     name: 'POS Systems',
   },
-  'qual-005': {
+  {
     id: 'qual-005',
     name: 'Customer Service',
   },
-  'qual-006': {
+  {
     id: 'qual-006',
     name: 'TypeScript',
   },
-  'qual-007': {
+  {
     id: 'qual-007',
     name: 'SQL',
   },
-  'qual-008': {
+  {
     id: 'qual-008',
     name: 'UI/UX Design',
   },
-  'qual-009': {
+  {
     id: 'qual-009',
     name: 'Digital Marketing',
   },
-  'qual-010': {
+  {
     id: 'qual-010',
     name: 'Sales Negotiation',
   },
-  'qual-011': {
+  {
     id: 'qual-011',
     name: 'Inventory Management',
   },
-  'qual-012': {
+  {
     id: 'qual-012',
     name: 'Accounting',
   },
-  'qual-013': {
+  {
     id: 'qual-013',
     name: 'Financial Analysis',
   },
-  'qual-014': {
+  {
     id: 'qual-014',
     name: 'Recruitment',
   },
-  'qual-015': {
+  {
     id: 'qual-015',
     name: 'Payroll',
   },
-  'qual-016': {
+  {
     id: 'qual-016',
     name: 'Data Analysis',
   },
-  'qual-017': {
+  {
     id: 'qual-017',
     name: 'Quality Assurance',
   },
-  'qual-018': {
+  {
     id: 'qual-018',
     name: 'DevOps',
   },
-  'qual-019': {
+  {
     id: 'qual-019',
     name: 'Cybersecurity',
   },
-  'qual-020': {
+  {
     id: 'qual-020',
     name: 'Business Administration',
   },
-  'qual-021': {
+  {
     id: 'qual-021',
     name: 'Supply Chain',
   },
-  'qual-022': {
+  {
     id: 'qual-022',
     name: 'Technical Support',
   },
-  'qual-023': {
+  {
     id: 'qual-023',
     name: 'Training & Development',
   },
-};
+];
 
 // 23 seniority levels
-export const seniorityLevels: Record<string, SeniorityLevel> = {
-  'sen-001': {
+export const seniorityLevels: SeniorityLevel[] = [
+  {
     id: 'sen-001',
     name: 'Junior',
   },
-  'sen-002': {
+  {
     id: 'sen-002',
     name: 'Mid-Level',
   },
-  'sen-003': {
+  {
     id: 'sen-003',
     name: 'Senior',
   },
-  'sen-004': {
+  {
     id: 'sen-004',
     name: 'Lead',
   },
-  'sen-005': {
+  {
     id: 'sen-005',
     name: 'Manager',
   },
-  'sen-006': {
+  {
     id: 'sen-006',
     name: 'Trainee',
   },
-  'sen-007': {
+  {
     id: 'sen-007',
     name: 'Associate',
   },
-  'sen-008': {
+  {
     id: 'sen-008',
     name: 'Senior Associate',
   },
-  'sen-009': {
+  {
     id: 'sen-009',
     name: 'Specialist',
   },
-  'sen-010': {
+  {
     id: 'sen-010',
     name: 'Senior Specialist',
   },
-  'sen-011': {
+  {
     id: 'sen-011',
     name: 'Supervisor',
   },
-  'sen-012': {
+  {
     id: 'sen-012',
     name: 'Assistant Manager',
   },
-  'sen-013': {
+  {
     id: 'sen-013',
     name: 'Deputy Manager',
   },
-  'sen-014': {
+  {
     id: 'sen-014',
     name: 'Department Manager',
   },
-  'sen-015': {
+  {
     id: 'sen-015',
     name: 'Senior Manager',
   },
-  'sen-016': {
+  {
     id: 'sen-016',
     name: 'Principal',
   },
-  'sen-017': {
+  {
     id: 'sen-017',
     name: 'Staff',
   },
-  'sen-018': {
+  {
     id: 'sen-018',
     name: 'Team Lead',
   },
-  'sen-019': {
+  {
     id: 'sen-019',
     name: 'Head',
   },
-  'sen-020': {
+  {
     id: 'sen-020',
     name: 'Director',
   },
-  'sen-021': {
+  {
     id: 'sen-021',
     name: 'Senior Director',
   },
-  'sen-022': {
+  {
     id: 'sen-022',
     name: 'General Manager',
   },
-  'sen-023': {
+  {
     id: 'sen-023',
     name: 'Executive',
   },
-};
+];
 
 // 23 departments
-export const departments: Record<string, Department> = {
-  'dep-001': {
+export const departments: Department[] = [
+  {
     id: 'dep-001',
     name: 'Engineering',
+    location: '46 Ain Shams Street, El-Zaytoun, Cairo',
+    code: 'ENG',
+    descriptio:
+      'Responsible for software development and technical engineering.',
   },
-  'dep-002': {
+  {
     id: 'dep-002',
     name: 'Sales',
+    location: '18 Abbas El-Akkad Street, Nasr City, Cairo',
+    code: 'SAL',
+    descriptio: 'Responsible for generating revenue through sales activities.',
   },
-  'dep-003': {
+  {
     id: 'dep-003',
     name: 'Operations',
+    location: '12 El-Tahrir Street, Dokki, Giza',
+    code: 'OPS',
+    descriptio: 'Manages daily business operations and processes.',
   },
-  'dep-004': {
+  {
     id: 'dep-004',
     name: 'Human Resources',
+    location: '25 Makram Ebeid Street, Nasr City, Cairo',
+    code: 'HR',
+    descriptio: 'Manages employees, recruitment, and workplace policies.',
   },
-  'dep-005': {
+  {
     id: 'dep-005',
     name: 'Finance',
+    location: '31 Ramses Street, Downtown Cairo',
+    code: 'FIN',
+    descriptio: 'Manages financial planning, accounting, and reporting.',
   },
-  'dep-006': {
+  {
     id: 'dep-006',
     name: 'Product',
+    location: '9 Mostafa El-Nahas Street, Nasr City, Cairo',
+    code: 'PROD',
+    descriptio: 'Responsible for product strategy and management.',
   },
-  'dep-007': {
+  {
     id: 'dep-007',
     name: 'Marketing',
+    location: '22 Lebanon Street, Mohandessin, Giza',
+    code: 'MKT',
+    descriptio: 'Responsible for marketing campaigns and branding.',
   },
-  'dep-008': {
+  {
     id: 'dep-008',
     name: 'Customer Support',
+    location: '14 El-Hegaz Street, Heliopolis, Cairo',
+    code: 'CS',
+    descriptio: 'Provides assistance and support to customers.',
   },
-  'dep-009': {
+  {
     id: 'dep-009',
     name: 'Information Technology',
+    location: '38 Ahmed Orabi Street, Mohandessin, Giza',
+    code: 'IT',
+    descriptio: 'Manages IT infrastructure and technical support.',
   },
-  'dep-010': {
+  {
     id: 'dep-010',
     name: 'Quality Assurance',
+    location: '7 El-Merghany Street, Heliopolis, Cairo',
+    code: 'QA',
+    descriptio: 'Ensures products and processes meet quality standards.',
   },
-  'dep-011': {
+  {
     id: 'dep-011',
     name: 'Procurement',
+    location: '16 El-Nasr Road, Maadi, Cairo',
+    code: 'PROC',
+    descriptio: 'Manages purchasing and supplier relationships.',
   },
-  'dep-012': {
+  {
     id: 'dep-012',
     name: 'Supply Chain',
+    location: '42 Ring Road, New Cairo',
+    code: 'SCM',
+    descriptio: 'Manages the flow of goods, materials, and resources.',
   },
-  'dep-013': {
+  {
     id: 'dep-013',
     name: 'Legal',
+    location: '11 Talaat Harb Street, Downtown Cairo',
+    code: 'LEG',
+    descriptio: 'Handles legal matters and contracts.',
   },
-  'dep-014': {
+  {
     id: 'dep-014',
     name: 'Administration',
+    location: '29 El-Montazah Street, Heliopolis, Cairo',
+    code: 'ADM',
+    descriptio: 'Manages administrative tasks and organizational support.',
   },
-  'dep-015': {
+  {
     id: 'dep-015',
     name: 'Business Development',
+    location: '20 North Teseen Street, New Cairo',
+    code: 'BD',
+    descriptio: 'Identifies new business opportunities and partnerships.',
   },
-  'dep-016': {
+  {
     id: 'dep-016',
     name: 'Data & Analytics',
+    location: '33 El-Batal Ahmed Abdel Aziz Street, Mohandessin, Giza',
+    code: 'DA',
+    descriptio: 'Analyzes data to support business decisions.',
   },
-  'dep-017': {
+  {
     id: 'dep-017',
     name: 'Security',
+    location: '8 Salah Salem Street, Nasr City, Cairo',
+    code: 'SEC',
+    descriptio: 'Manages organizational security and risk.',
   },
-  'dep-018': {
+  {
     id: 'dep-018',
     name: 'Training & Development',
+    location: '17 El-Bahr El-Azam Street, Giza',
+    code: 'L&D',
+    descriptio: 'Develops employee training and development programs.',
   },
-  'dep-019': {
+  {
     id: 'dep-019',
     name: 'Facilities',
+    location: '24 Corniche El-Maadi, Maadi, Cairo',
+    code: 'FAC',
+    descriptio: 'Manages buildings, maintenance, and workplace services.',
   },
-  'dep-020': {
+  {
     id: 'dep-020',
     name: 'Retail',
+    location: '5 El-Horreya Street, Heliopolis, Cairo',
+    code: 'RET',
+    descriptio: 'Manages retail operations and sales activities.',
   },
-  'dep-021': {
+  {
     id: 'dep-021',
     name: 'Logistics',
+    location: '41 Cairo-Alexandria Desert Road, Giza',
+    code: 'LOG',
+    descriptio: 'Manages transportation, warehousing, and distribution.',
   },
-  'dep-022': {
+  {
     id: 'dep-022',
     name: 'Compliance',
+    location: '13 El-Galaa Street, Downtown Cairo',
+    code: 'COMP',
+    descriptio: 'Ensures the organization follows applicable regulations.',
   },
-  'dep-023': {
+  {
     id: 'dep-023',
     name: 'Strategy',
+    location: '27 South Teseen Street, New Cairo',
+    code: 'STR',
+    descriptio: 'Develops long-term organizational strategy.',
   },
-};
+];
 
 // 23 jobs
-export const jobs: Record<string, Job> = {
-  'job-001': {
+export const jobs: Job[] = [
+  {
     id: 'job-001',
     title: 'Frontend Developer',
     description: 'Build and maintain web applications.',
@@ -663,27 +707,54 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Development Task',
+        name: 'Review Daily Sales Activity',
         description:
-          'Complete assigned development work according to requirements.',
+          'Review the day’s sales activity and update outstanding opportunities.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review sales activity',
+          'Update opportunity status',
+          'Record follow-up actions',
         ],
-        attachments: [
-          '../FakeFiles/jobManagement/Buy2 Business.docx',
-          '../FakeFiles/jobManagement/Buy2 Technical.docx',
-        ],
+        attachments: [],
         submissionTime: '17:00',
-        repeat: ['daily'],
+        repeat: {
+          repeatType: 'daily',
+        },
+      },
+      {
+        name: 'Check Customer Support Queue',
+        description:
+          'Review and process outstanding customer support requests.',
+        steps: [
+          'Review open requests',
+          'Resolve pending issues',
+          'Escalate unresolved cases',
+        ],
+        attachments: [],
+        submissionTime: '16:30',
+        repeat: {
+          repeatType: 'daily',
+        },
+      },
+      {
+        name: 'Review Employee Requests',
+        description:
+          'Review pending employee requests and complete required HR actions.',
+        steps: [
+          'Review requests',
+          'Process approved requests',
+          'Update request status',
+        ],
+        attachments: [],
+        submissionTime: '16:00',
+        repeat: {
+          repeatType: 'daily',
+        },
       },
     ],
     employeeIds: ['emp-002', 'emp-024', 'emp-025'],
   },
-  'job-002': {
+  {
     id: 'job-002',
     title: 'Backend Developer',
     description: 'Develop and maintain backend services and APIs.',
@@ -717,24 +788,34 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Development Task',
+        name: 'Update Project Progress',
+        description: 'Update the current progress of active project work.',
+        steps: ['Review completed work', 'Update progress', 'Record blockers'],
+        attachments: [],
+        submissionTime: '17:30',
+        repeat: {
+          repeatType: 'daily',
+        },
+      },
+      {
+        name: 'Review Inventory Levels',
         description:
-          'Complete assigned development work according to requirements.',
+          'Check inventory levels and identify products requiring replenishment.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review inventory',
+          'Identify low-stock items',
+          'Submit replenishment requests',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'daily',
+        },
       },
     ],
     employeeIds: ['emp-003', 'emp-026', 'emp-027'],
   },
-  'job-003': {
+  {
     id: 'job-003',
     title: 'Sales Representative',
     description: 'Manage customer relationships and achieve sales targets.',
@@ -761,24 +842,53 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Sales Follow-Up',
-        description:
-          'Follow up with assigned customers and update opportunity status.',
+        name: 'Process Purchase Requests',
+        description: 'Review and process pending purchase requests.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review requests',
+          'Verify requirements',
+          'Process approved requests',
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: ['daily'],
+        repeat: {
+          repeatType: 'daily',
+        },
+      },
+      {
+        name: 'Review Marketing Performance',
+        description:
+          'Review active marketing activities and identify performance issues.',
+        steps: [
+          'Review campaign data',
+          'Compare performance',
+          'Record required actions',
+        ],
+        attachments: [],
+        submissionTime: '17:00',
+        repeat: {
+          repeatType: 'daily',
+        },
+      },
+      {
+        name: 'Review Financial Transactions',
+        description:
+          'Review daily financial transactions for accuracy and exceptions.',
+        steps: [
+          'Review transactions',
+          'Identify discrepancies',
+          'Record exceptions',
+        ],
+        attachments: [],
+        submissionTime: '18:00',
+        repeat: {
+          repeatType: 'daily',
+        },
       },
     ],
     employeeIds: ['emp-004', 'emp-028', 'emp-029', 'emp-030'],
   },
-  'job-004': {
+  {
     id: 'job-004',
     title: 'Operations Coordinator',
     description: 'Coordinate daily operational activities and processes.',
@@ -805,23 +915,53 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Operations Check',
-        description: 'Review daily operations and resolve outstanding issues.',
+        name: 'Weekly Sales Pipeline Review',
+        description:
+          'Review the sales pipeline and identify opportunities requiring action.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review pipeline',
+          'Update opportunity stages',
+          'Identify next actions',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'monday',
+        },
+      },
+      {
+        name: 'Weekly Team Planning',
+        description:
+          'Review team priorities and plan activities for the upcoming week.',
+        steps: ['Review priorities', 'Assign activities', 'Confirm deadlines'],
+        attachments: [],
+        submissionTime: '10:00',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'monday',
+        },
+      },
+      {
+        name: 'Weekly HR Review',
+        description:
+          'Review outstanding HR activities and employee-related requests.',
+        steps: [
+          'Review HR requests',
+          'Check pending actions',
+          'Update records',
+        ],
+        attachments: [],
+        submissionTime: '14:00',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'tuesday',
+        },
       },
     ],
     employeeIds: ['emp-005', 'emp-031', 'emp-032'],
   },
-  'job-005': {
+  {
     id: 'job-005',
     title: 'HR Manager',
     description: 'Manage employee relations and HR operations.',
@@ -855,23 +995,51 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Employee Check-In',
-        description: 'Review employee requests and follow up on HR actions.',
+        name: 'Weekly Development Review',
+        description: 'Review development progress and technical blockers.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review completed work',
+          'Check blockers',
+          'Plan upcoming work',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['weekly'],
+        submissionTime: '16:00',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'tuesday',
+        },
+      },
+      {
+        name: 'Weekly Marketing Review',
+        description: 'Review marketing performance and upcoming campaigns.',
+        steps: [
+          'Review campaign results',
+          'Identify trends',
+          'Plan adjustments',
+        ],
+        attachments: [],
+        submissionTime: '15:30',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'wednesday',
+        },
+      },
+      {
+        name: 'Weekly Inventory Review',
+        description:
+          'Review inventory levels and upcoming supply requirements.',
+        steps: ['Review inventory', 'Identify shortages', 'Plan replenishment'],
+        attachments: [],
+        submissionTime: '14:30',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'wednesday',
+        },
       },
     ],
     employeeIds: ['emp-006', 'emp-033', 'emp-034'],
   },
-  'job-006': {
+  {
     id: 'job-006',
     title: 'Product Specialist',
     description: 'Define product requirements and coordinate product delivery.',
@@ -905,24 +1073,56 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Weekly Finance Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review financial activity and outstanding accounting items.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review transactions',
+          'Check exceptions',
+          'Update financial records',
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: ['daily'],
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'thursday',
+        },
+      },
+      {
+        name: 'Weekly Compliance Review',
+        description:
+          'Review compliance activities and outstanding requirements.',
+        steps: [
+          'Review requirements',
+          'Check documentation',
+          'Record missing items',
+        ],
+        attachments: [],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'thursday',
+        },
+      },
+      {
+        name: 'Weekly Support Quality Review',
+        description: 'Review customer support quality and recurring issues.',
+        steps: [
+          'Review support cases',
+          'Identify recurring issues',
+          'Record improvements',
+        ],
+        attachments: [],
+        submissionTime: '16:30',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'friday',
+        },
       },
     ],
     employeeIds: ['emp-007', 'emp-035'],
   },
-  'job-007': {
+  {
     id: 'job-007',
     title: 'Marketing Specialist',
     description: 'Plan and execute marketing campaigns and content.',
@@ -956,24 +1156,52 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Weekly Operations Report',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review operational performance and prepare the weekly report.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review operations',
+          'Summarize performance',
+          'Record recommendations',
         ],
         attachments: [],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'weekly',
+          weeklyDay: 'friday',
+        },
+      },
+      {
+        name: 'Customer Follow-Up Review',
+        description:
+          'Follow up with customers on active requests and opportunities.',
+        steps: [
+          'Review customer list',
+          'Complete follow-ups',
+          'Update customer records',
+        ],
+        attachments: [],
+        submissionTime: '16:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'wednesday', 'friday'],
+        },
+      },
+      {
+        name: 'Sales Outreach',
+        description: 'Perform scheduled outreach to prospective customers.',
+        steps: ['Review prospects', 'Contact prospects', 'Record responses'],
+        attachments: [],
         submissionTime: '17:00',
-        repeat: ['daily'],
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'tuesday', 'thursday'],
+        },
       },
     ],
     employeeIds: ['emp-008', 'emp-036'],
   },
-  'job-008': {
+  {
     id: 'job-008',
     title: 'Customer Support Agent',
     description: 'Handle customer requests and resolve service issues.',
@@ -1000,24 +1228,37 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Equipment Inspection',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Inspect workplace equipment and record maintenance issues.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Inspect equipment',
+          'Record issues',
+          'Submit maintenance requests',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '14:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'wednesday'],
+        },
+      },
+      {
+        name: 'Warehouse Stock Check',
+        description:
+          'Perform physical stock checks for selected inventory items.',
+        steps: ['Check stock', 'Compare quantities', 'Record discrepancies'],
+        attachments: [],
+        submissionTime: '13:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['tuesday', 'thursday', 'saturday'],
+        },
       },
     ],
     employeeIds: ['emp-009', 'emp-037', 'emp-038'],
   },
-  'job-009': {
+  {
     id: 'job-009',
     title: 'IT Support Specialist',
     description: 'Maintain internal systems and provide technical support.',
@@ -1044,24 +1285,60 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Social Media Content Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review scheduled social media content before publication.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review content',
+          'Check schedule',
+          'Approve or request changes',
         ],
         attachments: [],
-        submissionTime: '16:00',
-        repeat: ['daily'],
+        submissionTime: '12:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: [
+            'monday',
+            'wednesday',
+            'friday',
+            'sunday',
+            'tuesday',
+            'thursday',
+            'saturday',
+          ],
+        },
+      },
+      {
+        name: 'Security Monitoring Review',
+        description:
+          'Review security alerts and investigate outstanding events.',
+        steps: ['Review alerts', 'Investigate events', 'Document findings'],
+        attachments: [],
+        submissionTime: '18:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'thursday'],
+        },
+      },
+      {
+        name: 'Employee Attendance Review',
+        description: 'Review attendance records and identify irregularities.',
+        steps: [
+          'Review attendance',
+          'Identify exceptions',
+          'Record follow-up actions',
+        ],
+        attachments: [],
+        submissionTime: '10:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'wednesday', 'friday'],
+        },
       },
     ],
     employeeIds: ['emp-010', 'emp-039'],
   },
-  'job-010': {
+  {
     id: 'job-010',
     title: 'QA Engineer',
     description: 'Test software releases and maintain quality standards.',
@@ -1095,24 +1372,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Delivery Schedule Check',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review upcoming deliveries and identify delays or exceptions.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review deliveries',
+          'Check schedules',
+          'Contact relevant parties',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['weekly'],
+        submissionTime: '11:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['tuesday', 'thursday', 'saturday'],
+        },
       },
     ],
     employeeIds: ['emp-011', 'emp-040'],
   },
-  'job-011': {
+  {
     id: 'job-011',
     title: 'Procurement Specialist',
     description: 'Manage purchasing activities and supplier relationships.',
@@ -1146,24 +1424,20 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
-        description:
-          'Complete assigned responsibilities and submit the required update.',
-        steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
-        ],
+        name: 'Project Status Check',
+        description: 'Check project progress across active workstreams.',
+        steps: ['Review project status', 'Check blockers', 'Update progress'],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '16:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'wednesday'],
+        },
       },
     ],
     employeeIds: ['emp-012', 'emp-041'],
   },
-  'job-012': {
+  {
     id: 'job-012',
     title: 'Supply Chain Coordinator',
     description: 'Coordinate inventory flow and supply chain operations.',
@@ -1190,24 +1464,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Employee Records Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review employee records and ensure required information is up to date.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review records',
+          'Identify missing information',
+          'Update records',
         ],
         attachments: [],
-        submissionTime: '16:00',
-        repeat: ['daily'],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [1, 5, 10, 25],
+        },
       },
     ],
     employeeIds: ['emp-013', 'emp-042'],
   },
-  'job-013': {
+  {
     id: 'job-013',
     title: 'Legal Specialist',
     description:
@@ -1242,24 +1517,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Payroll Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review payroll information before the monthly payroll cycle.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review payroll data',
+          'Check exceptions',
+          'Record corrections',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '16:00',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [5, 10, 15, 20],
+        },
       },
     ],
     employeeIds: ['emp-014', 'emp-043'],
   },
-  'job-014': {
+  {
     id: 'job-014',
     title: 'Administrative Coordinator',
     description:
@@ -1294,24 +1570,26 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Customer Feedback Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review customer feedback and identify recurring issues or improvement opportunities.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review customer feedback',
+          'Identify recurring issues',
+          'Group feedback by category',
+          'Record improvement actions',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '14:30',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'wednesday', 'friday'],
+        },
       },
     ],
     employeeIds: ['emp-015', 'emp-044'],
   },
-  'job-015': {
+  {
     id: 'job-015',
     title: 'Business Development Executive',
     description:
@@ -1346,24 +1624,43 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Weekly Budget Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review the department budget and identify significant variances.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review budget figures',
+          'Compare actual spending against the budget',
+          'Identify significant variances',
+          'Record required actions',
+        ],
+        attachments: [],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['monday', 'wednesday', 'friday'],
+        },
+      },
+      {
+        name: 'Team Performance Review',
+        description:
+          'Review employee and team performance results and identify areas for improvement.',
+        steps: [
+          'Review performance results',
+          'Compare results against targets',
+          'Identify areas requiring improvement',
+          'Record recommendations',
         ],
         attachments: [],
         submissionTime: '16:00',
-        repeat: ['weekly'],
+        repeat: {
+          repeatType: 'multiple_days',
+          multipleDays: ['tuesday', 'thursday'],
+        },
       },
     ],
     employeeIds: ['emp-016', 'emp-045'],
   },
-  'job-016': {
+  {
     id: 'job-016',
     title: 'Data Analyst',
     description: 'Analyze business data and provide actionable insights.',
@@ -1397,24 +1694,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Management Report',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Prepare the monthly management report covering key business activities.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Collect department updates',
+          'Prepare report',
+          'Review key findings',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '16:30',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [1, 2, 5, 10, 25],
+        },
       },
     ],
     employeeIds: ['emp-017', 'emp-046'],
   },
-  'job-017': {
+  {
     id: 'job-017',
     title: 'Security Specialist',
     description: 'Protect company systems and monitor security controls.',
@@ -1441,24 +1739,24 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
-        description:
-          'Complete assigned responsibilities and submit the required update.',
+        name: 'Monthly Marketing Performance Review',
+        description: 'Review marketing performance for the previous month.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review campaign results',
+          'Analyze performance',
+          'Prepare recommendations',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '15:00',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [22, 24],
+        },
       },
     ],
     employeeIds: ['emp-018', 'emp-047'],
   },
-  'job-018': {
+  {
     id: 'job-018',
     title: 'Training Coordinator',
     description:
@@ -1493,24 +1791,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Equipment Maintenance',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review equipment condition and schedule required maintenance.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Inspect equipment',
+          'Review maintenance history',
+          'Schedule maintenance',
         ],
         attachments: [],
-        submissionTime: '16:00',
-        repeat: ['daily'],
+        submissionTime: '14:00',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [20, 25],
+        },
       },
     ],
     employeeIds: ['emp-019', 'emp-048'],
   },
-  'job-019': {
+  {
     id: 'job-019',
     title: 'Facilities Coordinator',
     description:
@@ -1545,24 +1844,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Security Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review security events and controls from the previous month.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review incidents',
+          'Check security controls',
+          'Document findings',
         ],
         attachments: [],
         submissionTime: '17:00',
-        repeat: ['daily'],
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [18, 20, 22],
+        },
       },
     ],
     employeeIds: ['emp-020', 'emp-049'],
   },
-  'job-020': {
+  {
     id: 'job-020',
     title: 'Retail Supervisor',
     description: 'Supervise retail operations and daily store performance.',
@@ -1589,24 +1889,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Compliance Audit',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review compliance documentation and outstanding requirements.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review documentation',
+          'Check requirements',
+          'Record deficiencies',
         ],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['weekly'],
+        submissionTime: '16:00',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [15, 20, 25],
+        },
       },
     ],
     employeeIds: ['emp-021', 'emp-050'],
   },
-  'job-021': {
+  {
     id: 'job-021',
     title: 'Logistics Coordinator',
     description: 'Coordinate deliveries, shipments, and logistics schedules.',
@@ -1633,24 +1934,25 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Supplier Review',
         description:
-          'Complete assigned responsibilities and submit the required update.',
+          'Review supplier performance and outstanding procurement issues.',
         steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
+          'Review supplier performance',
+          'Check deliveries',
+          'Record issues',
         ],
         attachments: [],
-        submissionTime: '16:00',
-        repeat: ['daily'],
+        submissionTime: '15:30',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [12, 18, 19, 20],
+        },
       },
     ],
     employeeIds: ['emp-022'],
   },
-  'job-022': {
+  {
     id: 'job-022',
     title: 'Compliance Officer',
     description:
@@ -1685,24 +1987,21 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Inventory Audit',
         description:
-          'Complete assigned responsibilities and submit the required update.',
-        steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
-        ],
+          'Perform a monthly inventory audit and document discrepancies.',
+        steps: ['Count inventory', 'Compare records', 'Document discrepancies'],
         attachments: [],
-        submissionTime: '17:00',
-        repeat: ['daily'],
+        submissionTime: '14:00',
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [10, 15, 20, 25],
+        },
       },
     ],
     employeeIds: ['emp-023'],
   },
-  'job-023': {
+  {
     id: 'job-023',
     title: 'Strategy Analyst',
     description: 'Analyze business performance and support strategic planning.',
@@ -1736,21 +2035,18 @@ export const jobs: Record<string, Job> = {
     ],
     fixedTasks: [
       {
-        name: 'Daily Task',
+        name: 'Monthly Financial Report',
         description:
-          'Complete assigned responsibilities and submit the required update.',
-        steps: [
-          'Review the assigned work and requirements.',
-          'Complete the required activities.',
-          'Check the result for accuracy and quality.',
-          'Record any issues or follow-up actions.',
-          'Submit the completed task.',
-        ],
+          'Prepare and review the monthly financial performance report.',
+        steps: ['Collect financial data', 'Prepare report', 'Review results'],
         attachments: [],
         submissionTime: '17:00',
-        repeat: ['daily'],
+        repeat: {
+          repeatType: 'monthly',
+          monthlyDays: [7, 9, 18, 26],
+        },
       },
     ],
     employeeIds: [],
   },
-};
+];

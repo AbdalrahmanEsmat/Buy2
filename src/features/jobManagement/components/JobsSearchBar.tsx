@@ -1,17 +1,17 @@
 import { useRef } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import type { Dispatch, SetStateAction } from 'react';
-import type { Job } from '../types';
+import type { Job } from '../../../types';
 
 type Props = {
   searchValue: string;
   setSearchValue: Dispatch<string>;
-  jobs: Record<string, Job>;
-  setSearchResult: Dispatch<SetStateAction<Record<string, Job>>>;
+  jobs: Job[];
+  setSearchResult: Dispatch<SetStateAction<Job[]>>;
   setCurrentPage: Dispatch<number>;
 };
 
-export default function SearchBar({
+export default function JobsSearchBar({
   searchValue,
   setSearchValue,
   jobs,
@@ -24,10 +24,8 @@ export default function SearchBar({
     setCurrentPage(1);
     setSearchValue(e.target.value);
 
-    const result = Object.fromEntries(
-      Object.entries(jobs).filter(([, job]) =>
-        job.title.toLowerCase().includes(e.target.value.toLowerCase()),
-      ),
+    const result = jobs.filter((job) =>
+      job.title.toLowerCase().includes(e.target.value.toLowerCase()),
     );
 
     setSearchResult(result);

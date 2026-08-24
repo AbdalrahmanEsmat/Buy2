@@ -9,6 +9,7 @@ import JobDetails from './features/jobManagement/JobDetails';
 import JobInformation from './features/jobManagement/JobInformation';
 import JobEmployees from './features/jobManagement/JobEmployees';
 import EmployeeProfile from './features/employeeManagement/employeeProfile';
+import CreateEditJob from './features/jobManagement/CreateEditJob';
 
 const JobManagement = lazy(() => import('./pages/JobManagment'));
 
@@ -29,6 +30,10 @@ function App() {
             <Route element={<AdminLayout />}>
               <Route index element={<Navigate to="job-management" replace />} />
               <Route path="job-management" element={<JobManagement />} />
+              <Route
+                path="job-management/create-job"
+                element={<CreateEditJob />}
+              />
               <Route path="job-management/:jobId" element={<JobDetails />}>
                 <Route
                   index
@@ -37,6 +42,10 @@ function App() {
                 <Route path="job-information" element={<JobInformation />} />
                 <Route path="job-employees" element={<JobEmployees />} />
               </Route>
+              <Route
+                path="job-management/edit-job/:jobId"
+                element={<CreateEditJob />}
+              />
               <Route
                 path="job-management/:jobId/job-employees/:employeeId"
                 element={<EmployeeProfile />}

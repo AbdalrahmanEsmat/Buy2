@@ -1,13 +1,25 @@
-import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import useJob from './useJob';
 import Loader from '@/components/Loader';
+import PageHeader from './components/PageHeader';
+import PageContainer from '../../components/PageContainer';
+import { useState } from 'react';
+import useDeleteJob from './useDeleteJob';
+import DeletingModal from './components/DeletingModal';
 
 export default function JobDetails() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const currentTab = `/${pathname.split('/').pop()}`;
   const { job, isPending, error } = useJob();
+  const { removeJob, deletingError } = useDeleteJob();
+  const [deleteStatusModal, setDeleteStatusModal] = useState<{
+    isOpen: boolean;
+    type: 'decision' | 'loading' | 'success' | 'error';
+  }>({
+    isOpen: false,
+    type: 'decision',
+  });
 
   //////////////////////
   if (isPending) return <Loader />;
@@ -15,21 +27,29 @@ export default function JobDetails() {
   if (!job) throw new Error('Job not found');
   //////////////////////
 
+  function handleDeleteJob(jobId: string) {
+    setDeleteStatusModal({ isOpen: true, type: 'loading' });
+    removeJob(jobId, {
+      onSuccess: () => {
+        setDeleteStatusModal({
+          isOpen: true,
+          type: 'success',
+        });
+      },
+
+      onError: () => {
+        setDeleteStatusModal({
+          isOpen: true,
+          type: 'error',
+        });
+      },
+    });
+  }
+
   return (
-    <div className="flex flex-col gap-12 py-8">
+    <PageContainer className="flex flex-col gap-12">
       {/* Page Header */}
-      <div className="flex h-9 items-center gap-8">
-        <button
-          onClick={() => navigate('/job-management', { replace: true })}
-          className="flex items-center gap-4 text-[#25459B] cursor-pointer"
-        >
-          <ChevronLeftIcon className="w-8" />{' '}
-          <span className="text-sm">Back </span>
-        </button>
-
-        <h1 className="text-2xl font-semibold text-[#171717]">Job Details</h1>
-      </div>
-
+      <PageHeader text="Job Details" />
       {/* 1. Job Summary */}
       <section className=" flex flex-col gap-10 rounded-lg border border-gray-200 px-8 pt-8">
         {/* Top row */}
@@ -39,11 +59,19 @@ export default function JobDetails() {
           </h2>
 
           <div className="flex gap-5 h-24">
-            <button className="rounded-[calc(6/16*1rem)] bg-danger-600 w-56  text-sm font-semibold text-white cursor-pointer">
+            <button
+              className="rounded-[calc(6/16*1rem)] bg-danger-600 w-56  text-sm font-semibold text-white cursor-pointer"
+              onClick={() => {
+                setDeleteStatusModal({ isOpen: true, type: 'decision' });
+              }}
+            >
               Delete
             </button>
 
-            <button className="rounded-[calc(6/16*1rem)] bg-primary-800 w-56 text-sm font-semibold text-white cursor-pointer">
+            <button
+              className="rounded-[calc(6/16*1rem)] bg-primary-800 w-56 text-sm font-semibold text-white cursor-pointer"
+              onClick={() => navigate(`/job-management/edit-job/${job.id}`)}
+            >
               Edit
             </button>
           </div>
@@ -93,8 +121,19 @@ export default function JobDetails() {
           </button>
         </div>
       </section>
-
+      <DeletingModal
+        isOpen={deleteStatusModal.isOpen}
+        onClose={() => {
+          if (deleteStatusModal.type === 'success') {
+            navigate(-1);
+          }
+          setDeleteStatusModal({ isOpen: false, type: 'decision' });
+        }}
+        onDelete={() => handleDeleteJob(job.id)}
+        type={deleteStatusModal.type}
+        message={`${deleteStatusModal.type === 'decision' ? 'Are you sure you want to delete this job?' : deleteStatusModal.type === 'loading' ? 'Please wait while we are deleting the job' : deleteStatusModal.type === 'success' ? 'The job has been deleted successfully' : deletingError?.message}`}
+      />
       <Outlet context={{ job }} />
-    </div>
+    </PageContainer>
   );
 }

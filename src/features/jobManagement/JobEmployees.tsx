@@ -31,12 +31,12 @@ export default function JobEmployees() {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {Object.values(employees).map((employee, idx) => (
+          {employees.map((employee, idx) => (
             <Table.Row
-              className={`${idx !== Object.values(employees).length - 1 ? 'border-b border-gray-200' : ''}`}
-              key={employee.employeeId}
+              className={`${idx !== employees.length - 1 ? 'border-b border-gray-200' : ''}`}
+              key={employee.id}
             >
-              <Table.Cell className="py-8">{employee.employeeId}</Table.Cell>
+              <Table.Cell className="py-8">{employee.id}</Table.Cell>
               <Table.Cell>{employee.name}</Table.Cell>
               <Table.Cell>{employee.email}</Table.Cell>
               <Table.Cell>{employee.joinDate}</Table.Cell>
@@ -44,7 +44,7 @@ export default function JobEmployees() {
                 <div className="flex justify-center">
                   <button
                     className="cursor-pointer"
-                    onClick={() => Navigate(`${employee.employeeId}`)}
+                    onClick={() => Navigate(`${employee.id}`)}
                   >
                     <EyeIcon className="size-10 text-gray-500" />
                   </button>

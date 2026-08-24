@@ -19,13 +19,27 @@ export type PerformanceMetric = {
   weight: number;
 };
 
+type Day =
+  | 'saturday'
+  | 'sunday'
+  | 'monday'
+  | 'tuesday'
+  | 'wednesday'
+  | 'thursday'
+  | 'friday';
+
 export type FixedTask = {
   name: string;
   description: string;
   steps: string[];
   attachments: string[];
   submissionTime: string;
-  repeat: ('daily' | 'weekly' | 'monthly' | 'multiple_days')[];
+  repeat: {
+    repeatType: 'daily' | 'weekly' | 'monthly' | 'multiple_days';
+    weeklyDay?: Day;
+    multipleDays?: Day[];
+    monthlyDays?: number[];
+  };
 };
 
 export type Job = {

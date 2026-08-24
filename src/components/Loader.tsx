@@ -1,3 +1,7 @@
 export default function Loader() {
-  return <p>LoadingOOOOO......</p>;
+  return (
+    <span className="loader">
+      <span className="loader-spinner" />
+    </span>
+  );
 }
