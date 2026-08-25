@@ -1,7 +1,6 @@
 import type { PerformanceMetric } from '../../../types';
 import Table from '../../../components/Table';
-import { TrashIcon } from '@heroicons/react/24/outline';
-import { PencilIcon } from '@heroicons/react/24/solid';
+import { TrashIcon, PencilIcon } from '@heroicons/react/24/outline';
 import Modal from '@/components/Modal';
 import { useState } from 'react';
 

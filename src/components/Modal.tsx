@@ -37,7 +37,7 @@ export default function Modal({
       onClick={onClose}
     >
       <div
-        className={`rounded-lg bg-white shadow-xl ${className ?? ''} `}
+        className={`rounded-lg bg-white shadow-xl max-h-[80%] overflow-y-auto ${className ?? ''} `}
         onClick={(e) => e.stopPropagation()}
       >
         {children}

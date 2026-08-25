@@ -376,6 +376,16 @@ export default function FixedTasksForm({ formData, setFormData }: Props) {
     }));
   }
 
+  // handle edit task
+  function handleEditTask(index: number, task: FixedTask) {
+    setFormData((prev) => ({
+      ...prev,
+      fixedTasks: prev.fixedTasks.map((fixedTask, i) =>
+        i === index ? task : fixedTask,
+      ),
+    }));
+  }
+
   return (
     <div className="flex flex-col gap-14">
       {/* /// P1 /// */}
@@ -1176,6 +1186,7 @@ export default function FixedTasksForm({ formData, setFormData }: Props) {
           fixedTasks={formData.fixedTasks}
           withActions={true}
           handleDeleteTask={handleDeleteTask}
+          handleEditTask={handleEditTask}
         />
       )}
     </div>
