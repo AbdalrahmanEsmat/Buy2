@@ -1,16 +1,17 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Loader from './components/Loader';
-import AdminLayout from './layouts/AdminLayout/AdminLayout';
-import RoleManagement from './pages/RoleManagement';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import JobDetails from './features/jobManagement/JobDetails';
-import JobInformation from './features/jobManagement/JobInformation';
-import JobEmployees from './features/jobManagement/JobEmployees';
-import EmployeeProfile from './features/employeeManagement/employeeProfile';
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Loader from "./components/Loader";
+import AdminLayout from "./layouts/AdminLayout/AdminLayout";
+import RoleManagement from "./pages/RoleManagement";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import JobDetails from "./features/jobManagement/JobDetails";
+import JobInformation from "./features/jobManagement/JobInformation";
+import JobEmployees from "./features/jobManagement/JobEmployees";
+import EmployeeProfile from "./features/employeeManagement/employeeProfile";
+import CreateNewRole from "./features/roleManagement/pages/CreateNewRole";
 
-const JobManagement = lazy(() => import('./pages/JobManagment'));
+const JobManagement = lazy(() => import("./pages/JobManagment"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,6 +43,10 @@ function App() {
                 element={<EmployeeProfile />}
               />
               <Route path="role-management" element={<RoleManagement />} />
+              <Route
+                path="role-management/create-new-role"
+                element={<CreateNewRole />}
+              />
             </Route>
           </Routes>
         </Suspense>
