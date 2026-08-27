@@ -1,11 +1,12 @@
-export type { Department } from './department';
-export type { Employee } from './employee';
+export type { Department } from "./department";
+export type { Employee } from "./employee";
 export type {
   FixedSchedule,
   FixedTask,
   Job,
   PerformanceMetric,
   JobDetails,
-} from './job';
-export type { Qualification } from './qualification';
-export type { SeniorityLevel } from './seniorityLevel';
+} from "./job";
+export type { Qualification } from "./qualification";
+export type { SeniorityLevel } from "./seniorityLevel";
+export type { Role } from "./role";
